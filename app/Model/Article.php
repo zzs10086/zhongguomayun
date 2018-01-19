@@ -25,6 +25,16 @@ class Article extends Model
         return $this->hasOne(Category::class,'id','catid');
     }
 
+    public static $status = [
+        'on' => ['value' => 0, 'text' => '正常', 'color' => 'primary'],
+        'off' => ['value' => 1, 'text' => '禁用', 'color' => 'default'],
+    ];
+
+    public static $flagInfo = [
+        'f' => '首页轮播',
+        's' => '二级头条'
+    ];
+
     /**
      * 获取文章详情
      * @param $id

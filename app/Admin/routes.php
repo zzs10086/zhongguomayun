@@ -11,5 +11,7 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index');
+    $router->get('article', 'ArticleController@index');
+    $router->get('article/{id}/edit', 'ArticleController@edit');
 
 });
