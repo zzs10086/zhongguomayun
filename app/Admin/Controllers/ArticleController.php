@@ -51,18 +51,33 @@ class ArticleController extends Controller
     {
         return Admin::grid(Article::class, function (Grid $grid) {
 
-            $grid->id('ID')->sortable();
+            $grid->id('ID')->sortable()->sortable();
 
-            $grid->title('标题')->limit(80);
+            $grid->column('title','标题')->limit(80);
 
             $grid->category()->category_name('分类');
 
             $grid->click('浏览次数');
+            $grid->addtime('新增时间')->display(function ($addtime) {
+                return date('Y-m-d H:i:s',$addtime);
+            });
 
             $grid->status('状态')->switch(Article::$status);
 
             $grid->created_at();
             $grid->updated_at();
+
+            $grid->filter(function ($filter) {
+                // 设置created_at字段的范围查询
+                $filter->between('addtime', '添加时间')->datetime();
+                #$filter->equal('title');//相等
+                $filter->like('title')->placeholder('请输入标题');
+
+            });
+
+            $grid->model()->orderBy('id', 'desc');
+
+            $grid->paginate(10);
         });
     }
 
@@ -70,16 +85,16 @@ class ArticleController extends Controller
     {
         return Admin::form(Article::class, function (Form $form) {
             $form->display('id', 'ID');
-            $form->text('title', '文章标题')->rules('required|min:3');
+            $form->text('title', '文章标题');
             $form->text('keywords', '关键词');
-            $form->text('source', '来源')->rules('required');
-            $form->textarea('description', '简介')->rows(2);
+            $form->text('source', '来源');
+            $form->textarea('description', '简介');
             $form->checkbox('flag', '标志位')->options(Article::$flagInfo);
             $form->image('thumb', '缩略图')->removable();
             //$form->select('catid', '分类')->options();
             $form->ckeditor('content.content', '文章内容');
-            $form->saving(function () {
-
+            $form->saving(function (Form $form) {
+                dump($form); exit;
             });
         });
     }
