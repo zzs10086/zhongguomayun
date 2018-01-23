@@ -10,6 +10,7 @@ use Encore\Admin\Layout\Content;
 use Encore\Admin\Grid;
 use Encore\Admin\Form;
 use App\Model\ArticleContent;
+use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
@@ -26,6 +27,10 @@ class ArticleController extends Controller
         });
     }
 
+    public function show($id)
+    {
+        return $this->edit($id);
+    }
     /**
      * Edit interface.
      *
@@ -34,9 +39,6 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
-        if($_POST){
-            echo '<pre>';echo $id;print_r($_POST);exit;
-        }
         return Admin::content(function (Content $content) use ($id) {
 
             $content->header('文章');
@@ -44,7 +46,36 @@ class ArticleController extends Controller
             $content->body($this->form()->edit($id));
         });
     }
+    /**
+     * 在存储器中更新指定文章
+     *
+     * @param Request $request
+     * @param int $id
+     * @return Response
+     */
+    public function update($id)
+    {
+        $result = $this->form()->update($id);
+        //admin_toastr('laravel-admin 提示','success');
+        // 界面的跳转逻辑
+        return $result;
+    }
 
+    /**
+     * Create interface.
+     *
+     * @return Content
+     */
+    public function create()
+    {
+        return Admin::content(function (Content $content) {
+
+            $content->header('header');
+            $content->description('description');
+
+            $content->body($this->form());
+        });
+    }
     /**
      * Make a grid builder.
      *
@@ -96,7 +127,7 @@ class ArticleController extends Controller
             $form->text('source', '来源');
             $form->textarea('description', '简介');
             //$form->checkbox('flag', '标志位')->options(Article::$flagInfo);
-            $form->image('thumb', '缩略图')->removable();
+            //$form->image('thumb', '缩略图')->removable();
             //$form->select('catid', '分类')->options();
             $form->ckeditor('content.content', '文章内容');
             /*$form->saving(function (Form $form) {

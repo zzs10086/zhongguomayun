@@ -35,7 +35,7 @@ class Article extends Model
         's' => '二级头条'
     ];
 
-    public function getFlagAttribute($flag){
+   /* public function getFlagAttribute($flag){
         $flagList = [];
         if (is_string($flag)) {
             $flagList = explode(',', $flag);
@@ -48,7 +48,7 @@ class Article extends Model
         if (is_array($flag)) {
             $this->attributes['flag'] = implode(',', $flag);
         }
-    }
+    }*/
     /**
      * 获取文章详情
      * @param $id
