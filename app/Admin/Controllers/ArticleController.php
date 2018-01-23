@@ -34,6 +34,9 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
+        if($_POST){
+            echo '<pre>';echo $id;print_r($_POST);exit;
+        }
         return Admin::content(function (Content $content) use ($id) {
 
             $content->header('文章');
@@ -51,13 +54,16 @@ class ArticleController extends Controller
     {
         return Admin::grid(Article::class, function (Grid $grid) {
 
-            $grid->id('ID')->sortable()->sortable();
+            $grid->id('ID')->sortable();
 
-            $grid->column('title','标题')->limit(80);
+            $grid->column('title','标题')->limit(80)->editable();
 
             $grid->category()->category_name('分类');
 
             $grid->click('浏览次数');
+
+            $grid->thumb()->image('http://www.zgmy.com', 100, 100);
+
             $grid->addtime('新增时间')->display(function ($addtime) {
                 return date('Y-m-d H:i:s',$addtime);
             });
@@ -85,17 +91,18 @@ class ArticleController extends Controller
     {
         return Admin::form(Article::class, function (Form $form) {
             $form->display('id', 'ID');
-            $form->text('title', '文章标题');
+            $form->text('title', '文章标题')->rules('required|min:10');
             $form->text('keywords', '关键词');
             $form->text('source', '来源');
             $form->textarea('description', '简介');
-            $form->checkbox('flag', '标志位')->options(Article::$flagInfo);
+            //$form->checkbox('flag', '标志位')->options(Article::$flagInfo);
             $form->image('thumb', '缩略图')->removable();
             //$form->select('catid', '分类')->options();
             $form->ckeditor('content.content', '文章内容');
-            $form->saving(function (Form $form) {
-                dump($form); exit;
-            });
+            /*$form->saving(function (Form $form) {
+                //admin_toastr('laravel-admin 提示','success');
+
+            });*/
         });
     }
 }

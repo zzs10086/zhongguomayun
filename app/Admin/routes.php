@@ -11,8 +11,9 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index');
-    $router->get('article', 'ArticleController@index');
+    $router->resource('article', 'ArticleController');
+   /* $router->get('article', 'ArticleController@index');
     $router->get('article/{id}/edit', 'ArticleController@edit');
-    $router->any('article/{id}', 'ArticleController@edit');
+    $router->any('article/{id}', 'ArticleController@edit');*/
 
 });

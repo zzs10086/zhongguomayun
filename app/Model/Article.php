@@ -35,6 +35,20 @@ class Article extends Model
         's' => '二级头条'
     ];
 
+    public function getFlagAttribute($flag){
+        $flagList = [];
+        if (is_string($flag)) {
+            $flagList = explode(',', $flag);
+        }
+        return $flagList;
+    }
+
+    public function setFlagAttribute($flag)
+    {
+        if (is_array($flag)) {
+            $this->attributes['flag'] = implode(',', $flag);
+        }
+    }
     /**
      * 获取文章详情
      * @param $id
