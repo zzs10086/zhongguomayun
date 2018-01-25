@@ -12,7 +12,7 @@ class Article extends Model
     //
     protected $table = 'article';
     
-    public $timestamps = false;
+    //public $timestamps = false;
 
     public function content()
     {
@@ -30,9 +30,21 @@ class Article extends Model
         'off' => ['value' => 1, 'text' => '禁用', 'color' => 'default'],
     ];
 
-    public static $flagInfo = [
-        'f' => '首页轮播',
-        's' => '二级头条'
+    public static $flag = [
+        '1' => '首页轮播',
+        's' => '二级头条',
+    ];
+
+    public static $isimg = [
+        1 => '图片',
+        2 => '视频'
+    ];
+
+    public static $category = [
+       1 =>'马云动态',
+       2 =>'马云视频',
+       3 =>'马云语录',
+       4 =>'阿里资讯',
     ];
 
    /* public function getFlagAttribute($flag){

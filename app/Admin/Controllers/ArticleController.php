@@ -70,8 +70,8 @@ class ArticleController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('header');
-            $content->description('description');
+            $content->header('文章');
+            $content->description('新增');
 
             $content->body($this->form());
         });
@@ -91,12 +91,16 @@ class ArticleController extends Controller
 
             $grid->category()->category_name('分类');
 
-            $grid->click('浏览次数');
+            $grid->click('浏览');
 
-            $grid->thumb()->image('http://www.zgmy.com', 100, 100);
+            $grid->thumb('封面')->image('http://zhongguomayun.oss-cn-hangzhou.aliyuncs.com/', 100, 100);
 
-            $grid->addtime('新增时间')->display(function ($addtime) {
+            /*$grid->addtime('新增时间')->display(function ($addtime) {
                 return date('Y-m-d H:i:s',$addtime);
+            });*/
+
+            $grid->is_img('类型')->display(function($is_img){
+                return $is_img == 2 ? '<span style="color:#ff0000 ">视频</span>' : '图片';
             });
 
             $grid->status('状态')->switch(Article::$status);
@@ -122,18 +126,23 @@ class ArticleController extends Controller
     {
         return Admin::form(Article::class, function (Form $form) {
             $form->display('id', 'ID');
-            $form->text('title', '文章标题')->rules('required|min:10');
-            $form->text('keywords', '关键词');
+            $form->text('title', '文章标题')->rules('required|min:3');
             $form->text('source', '来源');
+            $form->text('keywords', '关键词');
             $form->textarea('description', '简介');
-            //$form->checkbox('flag', '标志位')->options(Article::$flagInfo);
-            //$form->image('thumb', '缩略图')->removable();
-            //$form->select('catid', '分类')->options();
+            $form->image('thumb', '缩略图')->uniqueName()->removable();
+            //$form->checkbox('flag', '标志位')->options(Article::$flag);
+            $form->radio('is_img', '是否图片')->options(Article::$isimg)->default(1);
+            $form->text('video_url', '视频地址');
+            $form->select('catid', '分类')->options(Article::$category)->default(1);
             $form->ckeditor('content.content', '文章内容');
-            /*$form->saving(function (Form $form) {
+            $form->switch('status', '状态')->states(Article::$status);
+            $form->datetime('created_at','添加时间');
+            $form->datetime('updated_at','修改时间');
+            $form->saving(function (Form $form) {
                 //admin_toastr('laravel-admin 提示','success');
 
-            });*/
+            });
         });
     }
 }

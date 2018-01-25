@@ -68,12 +68,13 @@ return [
      */
     'upload' => [
 
-        'disk' => 'admin',
+        'disk' => 'oss',
 
         'directory' => [
             'image' => 'images',
-            'file'  => 'files',
+            'file'  => 'video',
         ],
+        'host' => 'http://zhongguomayun.oss-cn-hangzhou.aliyuncs.com/',
     ],
 
     /*

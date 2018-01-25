@@ -10,7 +10,7 @@
                         @foreach($foucsNews as $k=>$v)
                         <li class="current">
                             <a href="{{Util::createArcUrl($v['id'],$v['addtime'])}}" title="{{$v['title']}}" target="_blank">
-                                <img src="{{$v['thumb']}}" alt="{{$v['title']}}" width="745" height="340">
+                                <img src="{{config('app.upload_url') . $v['thumb']}}" alt="{{$v['title']}}" width="745" height="340">
                                 <p class="text">{{$v['title']}}</p>
                             </a>
                         </li>
@@ -105,7 +105,7 @@
         @foreach($mayunNews as $k=>$v)
         <li>
             <div class="article-info">
-                <div class="art-img"><a href="{{Util::createArcUrl($v['id'],$v['addtime'])}}" title="{{$v['title']}}"><img src="{{$v['thumb']}}" alt="{{$v['title']}}"/></a></div>
+                <div class="art-img"><a href="{{Util::createArcUrl($v['id'],$v['addtime'])}}" title="{{$v['title']}}"><img src="{{config('app.upload_url') . $v['thumb']}}" alt="{{$v['title']}}"/></a></div>
                 <div class="art-info">
                     <p class="art-title"><a href="{{Util::createArcUrl($v['id'],$v['addtime'])}}" target="_blank" title="{{$v['title']}}">{{$v['title']}}</a></p>
                     <p class="art-desc"><a href="{{Util::createArcUrl($v['id'],$v['addtime'])}}" target="_blank" title="{{$v['title']}}">{{$v['description']}}</a></p>
@@ -118,7 +118,7 @@
     </ul>
 @stop
 @section('js')
-    <script type="text/javascript" src="<?php echo env('APP_STATIC_URL');?>/pc/js/slide.js"></script>
+    <script type="text/javascript" src="<?php echo config('app.static_url');?>/pc/js/slide.js"></script>
     <script type="text/javascript">
         $('#focus').extend({
             speed: 1000, //动画时间

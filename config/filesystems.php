@@ -68,6 +68,17 @@ return [
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
+        'oss' => [
+                'driver'        => 'oss',
+                'access_id'     => 'Qxs5dTOIPfqk829V',
+                'access_key'    => 'ZrbJYCpTQV9uvJmHMBxNRP6dDgCfJo',
+                'bucket'        => 'zhongguomayun',
+                'endpoint'      => 'oss-cn-hangzhou.aliyuncs.com',
+                'isCName'       => false,
+                'debug'         => false,
+                'ssl'         => false,
+                'cdnDomain'         => 'http://zhongguomayun.oss-cn-hangzhou.aliyuncs.com/',
+        ],
 
     ],
 

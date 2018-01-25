@@ -176,6 +176,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Jacobcyl\AliOSS\AliOssServiceProvider::class,
 
     ],
 
@@ -229,5 +230,5 @@ return [
     ],
 
     'static_url' => env('APP_STATIC_URL', 'http://static.zhongguomayun.com'),
-
+    'upload_url' => env('APP_UPLOAD_URL', 'http://upload.zhongguomayun.com/'),
 ];
