@@ -2,7 +2,7 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form, fieldset,input,textarea,p
 body{ font-size:14px; background-color: #f0f2f5;}
 table{border-collapse:collapse; border-spacing:0;}
 fieldset,img{border:0;}
-address,caption,cite,code,dfn,em,strong,th,var{font-style:normal; font-weight:normal;}
+address,caption,cite,code,dfn,em,th,var{font-style:normal; font-weight:normal;}
 ol,ul{list-style:none;}
 caption,th{text-align:left;}
 h1,h2,h3,h4,h5,h6{font-size:100%; font-weight:normal;}
@@ -210,6 +210,9 @@ a{color:#666; text-decoration:none;}
     margin-right: 10px;
 }
 
+.article-info .art-info .art-desc a{
+    line-height: 25px;
+}
 
 .main .m_right{
     width:335px;
@@ -347,6 +350,9 @@ a{color:#666; text-decoration:none;}
 
 
 }
+.a-content img{
+    max-width: 780px;
+}
 .a-title{
     width: 100%;
     text-align: center;
@@ -444,6 +450,9 @@ a{color:#666; text-decoration:none;}
 }
 .a-article-info .a-art-info .a-art-title a{
     color: #000000;
+}
+.a-article-info .a-art-info .a-art-desc a{
+    line-height: 25px;
 }
 .a-article-info .a-art-info span{
     margin-right: 10px;

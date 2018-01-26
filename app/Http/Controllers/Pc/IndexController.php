@@ -56,7 +56,7 @@ class IndexController extends Controller
 
         $category_id = $category['id'];
 
-        $limit = 2;
+        $limit = 6;
 
         $list = Article::getArcList($category_id, $page, $limit);
 
@@ -108,6 +108,10 @@ class IndexController extends Controller
 
         if($page > $count)  abort(404);
 
+        //相关文章
+
+        $relevant = Article::getArcRelevant($article['catid'], $id, 6);
+
         $paginate = Paginate::_detailPage([
             'current_page' => $page,    // 当前页
             'per_page' => 10,       // 每页数量
@@ -124,7 +128,9 @@ class IndexController extends Controller
             'article' => $article,
             'content' => $contentArr[$page - 1],
             'paginate' => $paginate,
-            'count' => $count
+            'count' => $count,
+            'relevant' => $relevant,
+
         );
 
         //文章阅读量+1

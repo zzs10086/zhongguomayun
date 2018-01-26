@@ -155,4 +155,31 @@ class Article extends Model
 
         return $data;
     }
+
+    /**
+     * 获取子分类id
+     * @param $cid
+     * @return mixed
+     */
+    public static function getArcRelevant($category_id = 0, $id = 1, $limit = 6){
+
+        $key = "getArcRelevant:". $category_id . '_'. $category_id . '_'. $id . '_'.$limit ;
+
+        $data = Util::getRedis($key, true);
+
+        if(!$data){
+
+
+            $where = $category_id == 0 ?  [['status', 0]] : [['status', 0], ['catid', $category_id],['id', '<', $id]];
+
+            $query = Article::where($where);
+
+            $data = $query->limit($limit) ->orderBy('id', 'desc') ->get()->toArray();
+
+            Util::setRedis($key, $data);
+        }
+
+        return $data;
+
+    }
 }

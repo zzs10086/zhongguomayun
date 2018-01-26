@@ -134,6 +134,7 @@ class ArticleController extends Controller
             //$form->checkbox('flag', '标志位')->options(Article::$flag);
             $form->radio('is_img', '是否图片')->options(Article::$isimg)->default(1);
             $form->text('video_url', '视频地址');
+            $form->text('original_url', '源网址');
             $form->select('catid', '分类')->options(Article::$category)->default(1);
             $form->ckeditor('content.content', '文章内容');
             $form->switch('status', '状态')->states(Article::$status);
