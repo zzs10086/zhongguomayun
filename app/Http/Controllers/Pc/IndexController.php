@@ -127,8 +127,8 @@ class IndexController extends Controller
 
         $data = array(
             'title' => $article['title'] . '_' . config('app.name'),
-            'keyword' =>'keywords',
-            'description' => 'description',
+            'keyword' =>$article['keywords'],
+            'description' => $article['description'],
             'article' => $article,
             'content' => $contentArr[$page - 1],
             'paginate' => $paginate,
@@ -146,13 +146,12 @@ class IndexController extends Controller
     public function video($time, $id){
 
         $article = Article::getArcInfo($id);
-
         if(date('Ymd', strtotime($article['created_at'])) !== $time) abort(404);
-        
+
         $data = array(
             'title' => $article['title'] . '_' . config('app.name'),
-            'keyword' =>'keywords',
-            'description' => 'description',
+            'keyword' =>$article['keywords'],
+            'description' => $article['description'],
             'article' => $article,
         );
         return view('pc.video',$data);

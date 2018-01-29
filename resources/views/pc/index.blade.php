@@ -40,10 +40,10 @@
             <li>
                 <div class="video-box">
                     <div class="pic">
-                        <a href="{{Util::createArcUrl($v['id'],$v['created_at'])}}" title="{{$v['title']}}"><img src="{{config('app.upload_url') . $v['thumb']}}" alt="{{$v['title']}}"/></a>
+                        <a href="{{Util::createArcUrl($v['id'],$v['created_at'],$v['is_img'])}}" title="{{$v['title']}}"><img src="{{config('app.upload_url') . $v['thumb']}}" alt="{{$v['title']}}"/></a>
                     </div>
                     <div class="txt">
-                        <a href="{{Util::createArcUrl($v['id'],$v['created_at'])}}" title="{{$v['title']}}">{{$v['title']}}</a>
+                        <a href="{{Util::createArcUrl($v['id'],$v['created_at'],$v['is_img'])}}" title="{{$v['title']}}">{{$v['title']}}</a>
                     </div>
                 </div>
             </li>
