@@ -37,7 +37,8 @@ class Article extends Model
 
     public static $isimg = [
         1 => '图片',
-        2 => '视频'
+        2 => '视频',
+        3 => '文字',
     ];
 
     public static $category = [

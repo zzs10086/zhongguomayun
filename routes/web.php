@@ -16,6 +16,7 @@ Route::group(['domain' => 'www.zgmy.com','namespace' => 'Pc','prefix' => '/'], f
     Route::get('/contact.html', 'AboutController@contact');
     Route::get('/duanzi/{page}.html', 'IndexController@duanzi');
     Route::get('/duanzi/', 'IndexController@duanzi');
+    Route::get('/yulu', 'IndexController@yulu');
     Route::get('/{category}', 'IndexController@category');
     Route::get('/{category}/{page}.html', 'IndexController@category');
     Route::get('/news/{time}/{id}_{page}.html', 'IndexController@show');

@@ -516,3 +516,50 @@ a{color:#666; text-decoration:none;}
 .page a.width77 { width: 40px; }
 .page span { display: inline-block; text-align: center; color: #bebebe; font-size: 14px;background: #f3f3f3; padding: 8px 12px;  }
 .page a.next { cursor: pointer; }
+
+/**
+语录
+*/
+
+.m_left .yulu-list{
+    width:825px;
+}
+.m_left .yulu-list li{
+    width: 825px;
+    background: #ffffff;
+    height: 100px;
+    clear: both;
+    margin-top: 20px;
+    padding: 10px 0px;
+}
+.yulu-list li:hover{
+    background: #f7f7f7;
+    -webkit-box-shadow: 0 0 30px rgba(0,0,0,0.1);
+    box-shadow: 0 0 30px rgba(0,0,0,0.15);
+    -webkit-transform: translate3d(0, 1px, -2px);
+    transform: translate3d(0, 1px, -2px);
+}
+.yulu-info{
+    width: 750px;
+    padding-left: 10px;
+}
+.yulu-info .yulu-title a{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.yulu-info .yulu-biao{
+    width: 100%;
+    padding: 15px 0px;
+}
+.yulu-info .yulu-biao .p1{
+    display: block;
+    float: left;
+    color: #333333;
+
+}
+.yulu-info .yulu-biao .p2{
+    display: block;
+    float: right;
+
+}

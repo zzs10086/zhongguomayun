@@ -62,43 +62,43 @@
             <ul class="index-rank">
                 <li>
                     <span class="num1">01</span>
-                    <a href="">人还是要有梦想的，万一实现了呢？</a>
+                    <a href="javascript:void(0);">人还是要有梦想的，万一实现了呢？</a>
                 </li>
                 <li>
                     <span class="num2">02</span>
-                    <a href="">晚上想想千条路，早上醒来走原路。</a>
+                    <a href="javascript:void(0);">晚上想想千条路，早上醒来走原路。</a>
                 </li>
                 <li>
                     <span class="num3">03</span>
-                    <a href="">你穷，是因为你没有野心。</a>
+                    <a href="javascript:void(0);">你穷，是因为你没有野心。</a>
                 </li>
                 <li>
                     <span class="num">04</span>
-                    <a href="">当你成功的时候，你说的所有话都是真理。</a>
+                    <a href="javascript:void(0);">当你成功的时候，你说的所有话都是真理。</a>
                 </li>
                 <li>
                     <span class="num">05</span>
-                    <a href="">上当不是别人太狡猾，而是自己太贪。</a>
+                    <a href="javascript:void(0);">上当不是别人太狡猾，而是自己太贪。</a>
                 </li>
                 <li>
                     <span class="num">06</span>
-                    <a href="">寒冷的时候，学会用自己的左手温暖右手。</a>
+                    <a href="javascript:void(0);">寒冷的时候，学会用自己的左手温暖右手。</a>
                 </li>
                 <li>
                     <span class="num">07</span>
-                    <a href="">不要等到明天，明天太遥远，今天就行动。</a>
+                    <a href="javascript:void(0);">不要等到明天，明天太遥远，今天就行动。</a>
                 </li>
                 <li>
                     <span class="num">08</span>
-                    <a href="">因为信任，所以简单。</a>
+                    <a href="javascript:void(0);">因为信任，所以简单。</a>
                 </li>
                 <li>
                     <span class="num">09</span>
-                    <a href="">熬那些很苦的日子一点都不难，因为我知道它会变好。</a>
+                    <a href="javascript:void(0);">熬那些很苦的日子一点都不难，因为我知道它会变好。</a>
                 </li>
                 <li>
                     <span class="num">10</span>
-                    <a href="">以前我的生活就是工作，以后我的工作就是生活。</a>
+                    <a href="javascript:void(0);">以前我的生活就是工作，以后我的工作就是生活。</a>
                 </li>
             </ul>
 
@@ -116,8 +116,8 @@
     <div class="foot">
 
         <div class="copyright">
-            <p class="mobile-hide">本站由 <a href="http://www.aliyun.com" rel="nofollow" target="_blank">阿里云提供技术支持</a> </p>
-            <p class="law">© 2017~2020 中国马云 | 苏ICP备12031756号 </p>
+            <p class="mobile-hide">本站由 阿里云提供技术支持 </p>
+            <p class="law">© 2017~2020 中国马云 | <a href="http://www.miitbeian.gov.cn/" rel="nofollow" target="_blank">苏ICP备16035736号-7</a> </p>
 
         </div>
 

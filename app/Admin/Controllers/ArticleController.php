@@ -100,7 +100,14 @@ class ArticleController extends Controller
             });*/
 
             $grid->is_img('类型')->display(function($is_img){
-                return $is_img == 2 ? '<span style="color:#ff0000 ">视频</span>' : '图片';
+                if($is_img == 1){
+                   return '图片';
+                }elseif($is_img == 2){
+                    return '<span style="color:#ff0000 ">视频</span>';
+                }elseif($is_img == 3){
+                    return '<span style="color:#00ff00 ">文字</span>';
+                }
+
             });
 
             $grid->status('状态')->switch(Article::$status);
