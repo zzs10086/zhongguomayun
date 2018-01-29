@@ -214,7 +214,8 @@ class Util
         $siteUrl = $type == 'm' ? env('M_APP_URL') : env('APP_URL');
 
         $url = $siteUrl;
-        $urlTime = date('Ymd',$time);
+        //echo strtotime($time);exit;
+        $urlTime = date('Ymd',strtotime($time));
         if($is_img == 2){
             $url = $url . '/video/'.$urlTime.'/'.$id;
         }else{

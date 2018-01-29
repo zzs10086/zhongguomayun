@@ -1,9 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>中国马云</title>
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
+    <title>{{$title}}</title>
+    <meta name="description" content="{{$keyword}}" />
+    <meta name="keywords" content="{{$description}}" />
+    <link rel="shortcut icon" href="<?php echo config('app.static_url');?>/pc/images/favicon.ico" type="image/x-icon" />
     <link href="<?php echo config('app.static_url');?>/pc/css/style.css" rel="stylesheet" media="screen" type="text/css" />
     @yield('css')
 </head>
@@ -18,7 +19,7 @@
 <!--header-->
 <div class="header">
     <div class="hd_w">
-        <div class="logo"><a href="http://www.zbjuran.com"><img src="https://gss0.bdstatic.com/5foIcy0a2gI2n2jgoY3K/static/fisp_static/baijia/static/img/logo_8e6fbd7.png" height="48" width="122" alt="居然搞笑网"></a></div>
+        <div class="logo"><a href="/"><img src="/pc/images/logo.png" height="50" width="150" alt="中国马云"></a></div>
         <div class="nav">
             <ul>
                 <li><a href="/">首页</a></li>

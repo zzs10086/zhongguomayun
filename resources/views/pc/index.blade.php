@@ -9,7 +9,7 @@
                     <ul>
                         @foreach($foucsNews as $k=>$v)
                         <li class="current">
-                            <a href="{{Util::createArcUrl($v['id'],$v['addtime'])}}" title="{{$v['title']}}" target="_blank">
+                            <a href="{{Util::createArcUrl($v['id'],$v['created_at'])}}" title="{{$v['title']}}" target="_blank">
                                 <img src="{{config('app.upload_url') . $v['thumb']}}" alt="{{$v['title']}}" width="745" height="340">
                                 <p class="text">{{$v['title']}}</p>
                             </a>
@@ -25,7 +25,7 @@
             <div class="title-a"> <h2>热度排行</h2></div>
             <ul class="d1">
                 @foreach($hotNews as $k=>$v)
-                <li> <span class="triangle"></span><a target="_blank" href="{{Util::createArcUrl($v['id'],$v['addtime'])}}" title="{{$v['title']}}">{{$v['title']}}</a> </li>
+                <li> <span class="triangle"></span><a target="_blank" href="{{Util::createArcUrl($v['id'],$v['created_at'])}}" title="{{$v['title']}}">{{$v['title']}}</a> </li>
                 @endforeach
             </ul>
         </div>
@@ -36,66 +36,19 @@
     <div class="title-a"><h2>精彩视频</h2></div>
     <div class="video-list">
         <ul>
+            @foreach($videoNews as $k=>$v)
             <li>
                 <div class="video-box">
                     <div class="pic">
-                        <a href=""><img src="images/video.jpg" alt=""/></a>
+                        <a href="{{Util::createArcUrl($v['id'],$v['created_at'])}}" title="{{$v['title']}}"><img src="{{config('app.upload_url') . $v['thumb']}}" alt="{{$v['title']}}"/></a>
                     </div>
                     <div class="txt">
-                        <a href="">重磅！2018年1月硅谷，这可能是史上最强的智能驾驶峰会</a>
+                        <a href="{{Util::createArcUrl($v['id'],$v['created_at'])}}" title="{{$v['title']}}">{{$v['title']}}</a>
                     </div>
                 </div>
             </li>
-            <li>
-                <div class="video-box">
-                    <div class="pic">
-                        <a href=""><img src="images/video.jpg" alt=""/></a>
-                    </div>
-                    <div class="txt">
-                        <a href="">重磅！2018年1月硅谷，这可能是史上最强的智能驾驶峰会</a>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="video-box">
-                    <div class="pic">
-                        <a href=""><img src="images/video.jpg" alt=""/></a>
-                    </div>
-                    <div class="txt">
-                        <a href="">重磅！2018年1月硅谷，这可能是史上最强的智能驾驶峰会</a>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="video-box">
-                    <div class="pic">
-                        <a href=""><img src="images/video.jpg" alt=""/></a>
-                    </div>
-                    <div class="txt">
-                        <a href="">重磅！2018年1月硅谷，这可能是史上最强的智能驾驶峰会</a>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="video-box">
-                    <div class="pic">
-                        <a href=""><img src="images/video.jpg" alt=""/></a>
-                    </div>
-                    <div class="txt">
-                        <a href="">重磅！2018年1月硅谷，这可能是史上最强的智能驾驶峰会</a>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="video-box">
-                    <div class="pic">
-                        <a href=""><img src="images/video.jpg" alt=""/></a>
-                    </div>
-                    <div class="txt">
-                        <a href="">重磅！2018年1月硅谷，这可能是史上最强的智能驾驶峰会</a>
-                    </div>
-                </div>
-            </li>
+            @endforeach
+
         </ul>
     </div>
 
@@ -105,11 +58,11 @@
         @foreach($mayunNews as $k=>$v)
         <li>
             <div class="article-info">
-                <div class="art-img"><a href="{{Util::createArcUrl($v['id'],$v['addtime'])}}" title="{{$v['title']}}"><img src="{{config('app.upload_url') . $v['thumb']}}" alt="{{$v['title']}}"/></a></div>
+                <div class="art-img"><a href="{{Util::createArcUrl($v['id'],$v['created_at'])}}" title="{{$v['title']}}"><img src="{{config('app.upload_url') . $v['thumb']}}" alt="{{$v['title']}}"/></a></div>
                 <div class="art-info">
-                    <p class="art-title"><a href="{{Util::createArcUrl($v['id'],$v['addtime'])}}" target="_blank" title="{{$v['title']}}">{{$v['title']}}</a></p>
-                    <p class="art-desc"><a href="{{Util::createArcUrl($v['id'],$v['addtime'])}}" target="_blank" title="{{$v['title']}}">{{$v['description']}}</a></p>
-                    <p><span class="art-time">{{date('Y年m月d日',$v['addtime'])}}</span><span>阅读({{$v['click']}})</span></p>
+                    <p class="art-title"><a href="{{Util::createArcUrl($v['id'],$v['created_at'])}}" target="_blank" title="{{$v['title']}}">{{$v['title']}}</a></p>
+                    <p class="art-desc"><a href="{{Util::createArcUrl($v['id'],$v['created_at'])}}" target="_blank" title="{{$v['title']}}">{{$v['description']}}</a></p>
+                    <p><span class="art-time">{{$v['created_at']}}</span><span>阅读({{$v['click']}})</span></p>
                 </div>
             </div>
         </li>

@@ -26,6 +26,9 @@ class IndexController extends Controller
         //热度排行
         $hotNews = Article::getArcList(0, 1, 9, 'click');
 
+        //视频
+        $videoNews = Article::getArcList(2, 1, 6);
+
         $data = array(
             'title' => '中国马云民族骄傲',
             'keyword' => '马云,Jack.Ma,中国马云,阿里巴巴',
@@ -33,6 +36,7 @@ class IndexController extends Controller
             'foucsNews' => $foucsNews,
             'mayunNews' => $mayunNews,
             'hotNews' => $hotNews,
+            'videoNews' => $videoNews,
         );
 
         return view('pc.index', $data);
@@ -56,7 +60,7 @@ class IndexController extends Controller
 
         $category_id = $category['id'];
 
-        $limit = 6;
+        $limit = 10;
 
         $list = Article::getArcList($category_id, $page, $limit);
 
@@ -94,7 +98,7 @@ class IndexController extends Controller
 
         $article = Article::getArcInfo($id);
 
-        if(date('Ymd', $article['addtime']) !== $time) abort(404);
+        if(date('Ymd', strtotime($article['created_at'])) !== $time) abort(404);
 
         //处理分页
 
@@ -143,7 +147,7 @@ class IndexController extends Controller
 
         $article = Article::getArcInfo($id);
 
-        if(date('Ymd', $article['addtime']) !== $time) abort(404);
+        if(date('Ymd', strtotime($article['created_at'])) !== $time) abort(404);
         
         $data = array(
             'title' => $article['title'] . '_' . config('app.name'),
