@@ -30,8 +30,6 @@
                 <li class="line"></li>
                 <li><a href="/yulu/">马云语录</a></li>
                 <li class="line"></li>
-                <li><a href="/">马云公益</a></li>
-                <li class="line"></li>
                 <li><a href="/alibaba/">阿里资讯</a></li>
                 <li class="line"></li>
             </ul>
