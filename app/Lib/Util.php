@@ -233,4 +233,18 @@ class Util
         return $url;
     }
 
+    /**
+     * 判断是否是手机打开
+     * @return bool
+     */
+    public static function isMobile(){
+
+        if(stripos($_SERVER['HTTP_USER_AGENT'],"android")!=false||stripos($_SERVER['HTTP_USER_AGENT'],"ios")!=false||stripos($_SERVER['HTTP_USER_AGENT'],"wp")!=false){
+
+            return true;
+        }
+
+        return false;
+    }
+
 }

@@ -6,6 +6,9 @@
     <meta name="keywords" content="{{$description}}" />
     <link rel="shortcut icon" href="<?php echo config('app.static_url');?>/pc/images/favicon.ico" type="image/x-icon" />
     <link href="<?php echo config('app.static_url');?>/pc/css/style.css" rel="stylesheet" media="screen" type="text/css" />
+
+    <meta name="mobile-agent" content="format=html5;url=http://m.zgmy.com">
+
     @yield('css')
 </head>
 <body>

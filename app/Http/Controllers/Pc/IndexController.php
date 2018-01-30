@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Pc;
 
+use App\Lib\Util;
 use App\Model\Article;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -11,6 +12,16 @@ use App\Model\Category;
 
 class IndexController extends Controller
 {
+    public function __construct(){
+
+        //判断是否是手机端
+        if(Util::isMobile()){
+
+           $mUrl = config('app.m_url').$_SERVER['REQUEST_URI'];
+
+            header('Location: '.$mUrl);
+        }
+    }
     /**
      * 首页
      * @return mixed
