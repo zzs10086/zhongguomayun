@@ -24,7 +24,7 @@
                            data-setup="{}">
                         <source src="{{$article['video_url']}}" type="video/mp4">
                     </video>
-                    <script src="js/video.min.js"></script>
+                    <script src="<?php echo config('app.static_url');?>/pc/js/video.min.js"></script>
                     <script type="text/javascript">
                         var myPlayer = videojs('my-video');
                         videojs("my-video").ready(function(){
@@ -82,7 +82,7 @@
                     <div class="mb20 clearfix">
                         <div class="info fl">
                             <i class="fromIcon">
-                                <img src="https://p3.pstatp.com/thumb/2b60024d1c120708d84" alt="头像">
+                                <img src="<?php echo config('app.static_url');?>/pc/images/logo.png" alt="头像">
                             </i>
                             <span class="name">中国马云</span>
                         </div>

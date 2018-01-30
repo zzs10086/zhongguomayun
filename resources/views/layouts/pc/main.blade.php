@@ -19,7 +19,7 @@
 <!--header-->
 <div class="header">
     <div class="hd_w">
-        <div class="logo"><a href="/"><img src="/pc/images/logo.png" height="50" width="150" alt="中国马云"></a></div>
+        <div class="logo"><a href="/"><img src="<?php echo config('app.static_url');?>/pc/images/logo.png" height="50" width="150" alt="中国马云"></a></div>
         <div class="nav">
             <ul>
                 <li><a href="/">首页</a></li>
