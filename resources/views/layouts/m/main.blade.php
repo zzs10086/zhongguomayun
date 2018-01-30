@@ -21,21 +21,16 @@
         <span class="logo"><img src="<?php echo config('app.static_url');?>/m/images/logo.png"></span>
     </div>
 </header>
-<!-- menuAdd -->
-<div class="all_lanmu" id="slider">
-    <div class="all_lanmu_first_line">
-        <span class="all_lanmu_first_line_span_all">所有栏目</span>
-    </div>
-    <div class="all_lanmu_content">
-        <div class="all_lanmu_line">
-            <a href="/">首页</a>
-            <a href="/news/">资讯</a>
-            <a href="/video/">视频</a>
-            <a href="/yulu/">语录</a>
-            <a href="/alibaba/">阿里资讯</a>
-        </div>
-    </div>
+<div class="menu">
+    <ul>
+        <li><a href="/">首页</a></li>
+        <li><a href="/news/">资讯</a></li>
+        <li><a href="/video/">视频</a></li>
+        <li><a href="/yulu/">语录</a></li>
+        <li><a href="/alibaba/">阿里资讯</a></li>
+    </ul>
 </div>
+
 @yield('content')
 </body>
 </html>
