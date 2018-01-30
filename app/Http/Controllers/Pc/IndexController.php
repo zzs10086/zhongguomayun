@@ -43,9 +43,9 @@ class IndexController extends Controller
         $videoNews = Article::getArcList(2, 1, 6);
 
         $data = array(
-            'title' => '中国马云民族骄傲',
-            'keyword' => '马云,Jack.Ma,中国马云,阿里巴巴',
-            'description' => '中国马云是全面介绍名族优秀企业家马云的资讯网站',
+            'title' => '【马云】马云资料大全_马云演讲视频整理_马云的最新消息、动态_中国马云',
+            'keyword' => '马云资料大全、马云演讲视频、马云的最新消息、Jack Ma',
+            'description' => '马云是是中国的骄傲，也是世界上难得的成功企业界。中国马云网为你提供马云全部资料、演讲视频、马云最新动态相关新闻！想了解最新最全的马云消息，关注中国马云网zhongguomayun.com！',
             'foucsNews' => $foucsNews,
             'mayunNews' => $mayunNews,
             'hotNews' => $hotNews,
