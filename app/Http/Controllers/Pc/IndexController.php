@@ -12,14 +12,16 @@ use App\Model\Category;
 
 class IndexController extends Controller
 {
+    private static $mUrl;
+
     public function __construct(){
+
+        self::$mUrl = config('app.m_url').$_SERVER['REQUEST_URI'];
 
         //判断是否是手机端
         if(Util::isMobile()){
 
-           $mUrl = config('app.m_url').$_SERVER['REQUEST_URI'];
-
-            header('Location: '.$mUrl);
+            header('Location: '.self::$mUrl);
         }
     }
     /**
@@ -48,6 +50,7 @@ class IndexController extends Controller
             'mayunNews' => $mayunNews,
             'hotNews' => $hotNews,
             'videoNews' => $videoNews,
+            'mURL' => self::$mUrl,
         );
 
         return view('pc.index', $data);
@@ -93,7 +96,8 @@ class IndexController extends Controller
             'list'=>$list,
             'paginate' => $paginate,
             'category_id'=>$category_id,
-            'current' =>$category['category_name']
+            'current' =>$category['category_name'],
+            'mURL' => self::$mUrl,
         );
 
         return view('pc.category', $data);
@@ -140,7 +144,8 @@ class IndexController extends Controller
             'list'=>$list,
             'paginate' => $paginate,
             'category_id'=>$category_id,
-            'current' =>$category['category_name']
+            'current' =>$category['category_name'],
+            'mURL' => self::$mUrl,
         );
 
         return view('pc.yulu', $data);
@@ -184,7 +189,7 @@ class IndexController extends Controller
         ]);
 
         $data = array(
-            'title' => $article['title'] . '_' . config('app.name'),
+            'title' => $article['title'],
             'keyword' =>$article['keywords'],
             'description' => $article['description'],
             'article' => $article,
@@ -192,6 +197,7 @@ class IndexController extends Controller
             'paginate' => $paginate,
             'count' => $count,
             'relevant' => $relevant,
+            'mURL' => self::$mUrl,
 
         );
 
@@ -219,6 +225,7 @@ class IndexController extends Controller
             'article' => $article,
             'relevant' => $relevant,
             'hotVideo' => $hotVideo,
+            'mURL' => self::$mUrl,
         );
 
         //文章阅读量+1

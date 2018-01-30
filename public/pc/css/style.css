@@ -360,11 +360,12 @@ a{color:#666; text-decoration:none;}
     padding: 0 0 30px;
     overflow-wrap:break-word;
 }
-.a-title h2{
+.a-title h1{
     font-size: 30px;
 
     color: #333;
     margin-bottom: 20px;
+
 }
 .a-title .a-time{
     width: 200px;

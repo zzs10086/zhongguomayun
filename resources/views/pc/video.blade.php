@@ -6,7 +6,7 @@
 @section('content')
 <div class="a-content mt10">
     <div class="a-title">
-        <h2>{{$article['title']}}</h2>
+        <h1>{{$article['title']}}</h1>
         <div class="a-time"><svg width="1em" height="1em" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="meta-item__icon icon" style="font-size:14px;color:#999999;margin-right:6px;" data-v-849552ce=""><path d="M512 0C229.232 0 0 229.232 0 512s229.232 512 512 512 512-229.232 512-512S794.768 0 512 0zm0 960C264.976 960 64 759.024 64 512S264.976 64 512 64s448 200.976 448 448-200.976 448-448 448zm246.72-346.496L531.888 510.4V225.872c0-17.68-14.336-32-32-32s-32 14.32-32 32v305.12a31.944 31.944 0 0 0 18.768 29.12l245.6 111.632a31.577 31.577 0 0 0 13.216 2.88c12.16 0 23.776-6.976 29.136-18.752 7.312-16.096.208-35.056-15.888-42.368z"></path></svg>{{$article['created_at']}}</div>
         <div class="a-read"><svg width="1em" height="1em" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="meta-item__icon icon" style="font-size:14px;color:#999999;margin-right:6px;" data-v-849552ce=""><path d="M0 0h1024v837.818H698.182L512 1024 325.818 837.818H0V0zm93.09 93.09v651.637h279.274L512 884.364l139.636-139.637H930.91V93.091H93.091zm186.183 186.183h465.454v93.09H279.273v-93.09zm0 186.182h465.454v93.09H279.273v-93.09z"></path></svg> {{$article['click']}}</div>
     </div>
