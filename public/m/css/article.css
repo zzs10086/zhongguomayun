@@ -1,0 +1,14 @@
+
+/*正文*/
+.articleCon{margin:0 0.4rem;}
+.articleCon h1{font-size: 0.6rem;margin:0.36rem 0;}
+.artFrom{font-size:0.28rem;margin-bottom: 0.133333rem;color: #999;}
+.artFrom .a_from{margin-right: 0.2rem;}
+.artCon{font-size: 0.42rem;overflow: hidden;}
+.artCon p{line-height: 0.8rem;margin-bottom: 0.6rem;}
+.artCon p img{max-width: 100%;display: block;margin:0 auto;}
+
+/*page*/
+.page { text-align: center;background: #fff;padding:0.266667rem 0; }
+.page li { display: inline; margin: 0 0.066667rem; }
+.page a {padding: 0.24rem 0.764rem;text-align: center;background: #1576BD;display: inline-block;font-size: 0.42rem;color:#fff;}

@@ -183,4 +183,35 @@ class Article extends Model
         return $data;
 
     }
+
+    public static function preArc($id, $category_id)
+    {
+
+        $key = "preArc:" . $id . "_" . $category_id;
+
+        $data = Util::getRedis($key, true);
+
+        if (!$data) {
+
+            $data = Article::where([['status', 0], ['catid', $category_id], ['id', '>', $id]])->orderBy('id', 'asc')->first();
+        }
+
+
+        return $data;
+    }
+
+    public static function nextArc($id, $category_id)
+    {
+
+        $key = "nextArc:" . $id . "_" . $category_id;
+
+        $data = Util::getRedis($key, true);
+
+        if (!$data) {
+
+            $data = Article::where([['status', 0], ['catid', $category_id], ['id', '<', $id]])->orderBy('id', 'desc')->first();
+        }
+
+        return $data;
+    }
 }

@@ -80,4 +80,28 @@ class Category extends Model
 
         return $data;
     }
+
+    /**
+     *
+     * 通过拼音查询分类
+     * @param string $typename_en
+     * @return mixed
+     */
+    public static function getCategoryById($id){
+
+        $key = "getCategoryById:". $id;
+
+        $data = Util::getRedis($key, true);
+
+        if(!$data){
+
+            $where = [['status', 0],['id',$id]];
+
+            $data = Category::where($where)->first();
+
+            Util::setRedis($key, $data);
+        }
+
+        return $data;
+    }
 }

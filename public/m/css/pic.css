@@ -1,0 +1,7 @@
+
+.pic_c h2{font-size: 0.48rem;text-align: center;margin:0.4rem;}
+#picBox {position: relative;}
+#picBox img{width: 100%;display: block;}
+#picBox p{font-size: 0.42rem;line-height: 0.7rem;padding:0.4rem;text-indent:2em;}
+.pageState{font-size: 0.48rem;margin-right:0.2rem;text-align: center;margin-top:0.4rem;}
+.pageState span{color:#c00;}

@@ -24,3 +24,12 @@ Route::group(['domain' => config('app.domain'),'namespace' => 'Pc','prefix' => '
     Route::get('/video/{time}/{id}.html', 'IndexController@video');
 
 });
+
+Route::group(['domain' => config('app.m_domain'),'namespace' => 'M','prefix' => '/'], function () {
+    Route::get('/', 'IndexController@index');
+    Route::get('/{category}', 'IndexController@category');
+    Route::get('/{category}/{page}.html', 'IndexController@category');
+    Route::get('/news/{time}/{id}_{page}.html', 'IndexController@show');
+    Route::get('/news/{time}/{id}.html', 'IndexController@show');
+    Route::get('/video/{time}/{id}.html', 'IndexController@video');
+});

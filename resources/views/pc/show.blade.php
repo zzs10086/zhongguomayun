@@ -34,7 +34,7 @@
                             <div class="a-art-img"><a href="{{Util::createArcUrl($v['id'],$v['created_at'],$v['is_img'])}}"><img src="{{config('app.upload_url') . $v['thumb']}}" alt="{{$v['title']}}"/></a></div>
                             <div class="a-art-info">
                                 <p class="a-art-title"><a href="{{Util::createArcUrl($v['id'],$v['created_at'],$v['is_img'])}}" target="_blank" title="{{$v['title']}}">{{$v['title']}}</a></p>
-                                <p class="a-art-desc"><a href="{{Util::createArcUrl($v['id'],$v['created_at'],$v['is_img'])}}" target="_blank" title="{{$v['title']}}">这就是你应该知道的。在本文中，我将探讨它对利用投机资金进行交易意味着什么。我还将会讲解向经纪商入金时使自己放心的两种方式，无论你的入金金额有多大</a></p>
+                                <p class="a-art-desc"><a href="{{Util::createArcUrl($v['id'],$v['created_at'],$v['is_img'])}}" target="_blank" title="{{$v['title']}}">{{$v['description']}}</a></p>
                                 <p><span class="a-art-time">{{$v['created_at']}}</span><span>阅读({{$v['click']}})</span></p>
                             </div>
                         </div>
