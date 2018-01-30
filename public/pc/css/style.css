@@ -339,7 +339,7 @@ a{color:#666; text-decoration:none;}
 #focus ol{ overflow: hidden; position: absolute; right: 3%; bottom: 12px; z-index: 3;}
 #focus ol li{ width: 12px; height: 12px; background: #D9D9D9; border-radius: 100%; float: left; margin-left: 10px; cursor: pointer;}
 #focus ol li.current{ background: #fc114a;}
-#focus ul li .text { position:absolute; left:0; bottom:0; width:100%; height:40px; line-height:40px; z-index:10; text-align:left; padding-left:10px; background:rgba(0,0,0,0.6); box-sizing:border-box; font-size:20px; overflow:hidden;}
+#focus ul li .text { position:absolute; left:0; bottom:0; width:100%; height:40px; line-height:40px; z-index:10; text-align:left; padding-left:10px; background:rgba(0,0,0,0.6); box-sizing:border-box; font-size:20px; overflow:hidden; color: #fff;}
 
 .a-content{
     clear: both;
