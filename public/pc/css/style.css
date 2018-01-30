@@ -564,3 +564,14 @@ a{color:#666; text-decoration:none;}
     float: right;
 
 }
+
+/*scroll*/
+#fixedBtn { margin: 150px 0 0 970px; position: fixed; width: 22px; }
+#fixedBtn { font-family: '微软雅黑'; height: 220px; overflow: hidden; position: fixed; width: 54px; }
+#fixedBtn a { background: url(../images/public.png) no-repeat 0 -400px; color: #fff; display: block; font-size: 17px; height: 54px; line-height: 54px; margin-top: 1px; text-align: center; text-indent: -2000px; width: 54px; }
+#fixedBtn .a1 { background-position: 0 0; }
+#fixedBtn .a2 { background-position: 0 -55px; }
+#fixedBtn .top { background-position: 0 -110px; }
+#fixedBtn .down { background-position: 0 -165px; }
+#fixedBtn a:hover { background: #7C7C7C; color: #fff !important; text-decoration: none; text-indent: 0; }
+#fixedBtn { margin-left: 1206px; }

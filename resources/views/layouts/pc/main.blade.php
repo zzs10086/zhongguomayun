@@ -13,7 +13,7 @@
 </head>
 <body>
 <!--toper-->
-<div class="toper">
+<div id="topBar" class="toper">
     <div class="tpr">
         <p class="tpr_1">做此站仅向中国骄傲Jack.Ma 马云致敬，全民偶像，我的人生导师！</p>
         <p class="tpr_2">it's never too late to believe in yourself!</p>
@@ -112,6 +112,10 @@
         </div>
     </div>
     <!--right end-->
+    <div id="fixedBtn">
+        <a class="top" href="#topBar">向上</a>
+        <a class="down" href="javascript:void(0)" onclick="$('html,body').animate({scrollTop:$(document).height()},150);">向下</a>
+    </div>
 </div>
 
 
@@ -128,6 +132,7 @@
 </div>
 
 <script type="text/javascript" src="<?php echo config('app.static_url');?>/pc/js/jquery-1.7.2.min.js"></script>
+
 @yield('js')
 </body>
 </html>
