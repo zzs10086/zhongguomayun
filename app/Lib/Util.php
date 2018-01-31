@@ -291,11 +291,11 @@ class Util
 
             try{
 
-                $imgName = time().rand(1,999).self::getSuffix($v);
+                $imgName = time().rand(1,999).'.'.self::getSuffix($v);
 
                 $targetName = $targetDir.'/'.$imgName;
 
-                $newUrl = config('app.upload_url').'/'.$targetName;
+                $newUrl = config('app.upload_url').$targetName;
 
                 $client =new Client();
 
@@ -304,6 +304,8 @@ class Util
                 Storage::disk('local')->put($imgName,$data);
 
                 OSS::publicUpload(config('app.oss_bucket'),$targetName,storage_path('app/'.$imgName));
+
+                unlink(storage_path('app/'.$imgName));
 
             }catch (RequestException $e){
 
