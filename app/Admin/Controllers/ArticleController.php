@@ -93,7 +93,7 @@ class ArticleController extends Controller
 
             $grid->click('浏览');
 
-            $grid->thumb('封面')->image('http://zhongguomayun.oss-cn-hangzhou.aliyuncs.com/', 100, 100);
+            $grid->thumb('封面')->image('http://s1.zhongguomayun.com/', 100, 100);
 
             /*$grid->addtime('新增时间')->display(function ($addtime) {
                 return date('Y-m-d H:i:s',$addtime);
