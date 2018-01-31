@@ -25,6 +25,11 @@ class Article extends Model
         return $this->hasOne(Category::class,'id','catid');
     }
 
+    public function setContentAttribute($value)
+    {
+        $this->attributes['content'] = $value;
+    }
+
     public static $status = [
         'on' => ['value' => 0, 'text' => '正常', 'color' => 'primary'],
         'off' => ['value' => 1, 'text' => '禁用', 'color' => 'default'],
