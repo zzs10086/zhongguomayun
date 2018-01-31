@@ -234,7 +234,7 @@ class ArticleController extends Controller
 
                 $content = str_replace($imgUrlArr,$imgReplaceArr, $content);
 
-                $info = Article::where('id',$id)->first();
+                $info = ArticleContent::where('aid',$id)->first();
 
                 $info->content = $content;
 
