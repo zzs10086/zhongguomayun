@@ -196,10 +196,10 @@ class ArticleController extends Controller
 
 
             $form->saved(function(Form $form){
-                
+
                 $id = $form->model()->getKey();
 
-                $content = $form->article['content'];
+                $content = $form->content['content'];
 
                 $imgUrlArr = Util::getImageUrl($content);
                 $imgReplaceArr = []; //替换后的
