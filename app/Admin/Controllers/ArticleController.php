@@ -153,7 +153,7 @@ class ArticleController extends Controller
                 $content = $form->content['content'];
                 $imgUrlArr = Util::getImageUrl($content);
                 foreach($imgUrlArr as $k=>$v){
-                    OSS::publicUpload(config('app.oss_bucket'),'images/6666.jpg','/test666.jpg');
+                    OSS::publicUpload(config('app.oss_bucket'),'images/6666.jpg','/tmp/test666.jpg');
                     exit;
                 }
                 echo '<pre>';
