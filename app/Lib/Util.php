@@ -7,6 +7,11 @@
  */
 namespace App\Lib;
 use Illuminate\Support\Facades\Redis;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\RequestException;
+use Illuminate\Http\Request;
+use App\Services\OSS;
+use Illuminate\Support\Facades\Storage;
 
 class Util
 {
@@ -262,6 +267,90 @@ class Util
 
         }
         return false;
+    }
+
+    /**
+     * 处理图片上传oss
+     * @param array $imgUrlArr
+     * @return array|bool
+     */
+    public static function saveOssImg($imgUrlArr = []){
+
+        if(!$imgUrlArr) return false;
+
+        $newUrlArr = [];
+
+        $targetDir = 'images/'.self::getRandomString(2);
+
+        foreach($imgUrlArr as $k=>$v){
+
+            //如果已经上传oss过，则返回
+            if(strpos($v, 's1.zhangzhengshan.com')!==false) return false;
+
+            $newUrl = '';
+
+            try{
+
+                $imgName = time().rand(1,999).self::getSuffix($v);
+
+                $targetName = $targetDir.'/'.$imgName;
+
+                $newUrl = config('app.upload_url').'/'.$targetName;
+
+                $client =new Client();
+
+                $data = $client->request('get',$v)->getBody()->getContents();
+
+                Storage::disk('local')->put($imgName,$data);
+
+                OSS::publicUpload(config('app.oss_bucket'),$targetName,storage_path('app/'.$imgName));
+
+            }catch (RequestException $e){
+
+            }
+
+            $newUrlArr[] = $newUrl;
+
+        }
+
+        return $newUrlArr;
+    }
+
+    /**
+     * 获取文件后缀
+     * @param $url
+     * @return mixed
+     */
+    public static function getSuffix($url)
+    {
+
+        return $Suffix=end(explode('.',$url));
+
+    }
+
+    /**
+     * 生成2个字母
+     * @param $len
+     * @param null $chars
+     * @return string
+     */
+    function getRandomString($len, $chars=null)
+    {
+        if (is_null($chars)){
+
+            //$chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            $chars = "abcdefghijklmnopqrstuvwxyz0123456789";
+        }
+
+        mt_srand(10000000*(double)microtime());
+
+        for ($i = 0, $str = '', $lc = strlen($chars)-1; $i < $len; $i++){
+
+            $str .= $chars[mt_rand(0, $lc)];
+
+        }
+
+        return $str;
     }
 
 }

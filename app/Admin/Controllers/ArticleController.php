@@ -202,7 +202,8 @@ class ArticleController extends Controller
                 $content = $form->content['content'];
 
                 $imgUrlArr = Util::getImageUrl($content);
-                $imgReplaceArr = []; //替换后的
+
+                /*$imgReplaceArr = []; //替换后的
 
                 foreach($imgUrlArr as $k=>$v){
 
@@ -230,15 +231,22 @@ class ArticleController extends Controller
 
                     $imgReplaceArr[] = $newUrl;
 
+                }*/
+
+                $ossImgUrlArr = Util::saveOssImg($imgUrlArr);
+
+                if($ossImgUrlArr){
+
+                    $content = str_replace($imgUrlArr,$ossImgUrlArr, $content);
+
+                    $info = ArticleContent::where('aid',$id)->first();
+
+                    $info->content = $content;
+
+                    $info->save();
+                    
                 }
 
-                $content = str_replace($imgUrlArr,$imgReplaceArr, $content);
-
-                $info = ArticleContent::where('aid',$id)->first();
-
-                $info->content = $content;
-
-                $info->save();
 
             });
 
