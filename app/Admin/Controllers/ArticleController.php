@@ -166,7 +166,7 @@ class ArticleController extends Controller
                         $data = $client->request('get',$v)->getBody()->getContents();
                         Storage::disk('local')->put($imgName,$data);
 
-                        OSS::publicUpload(config('app.oss_bucket'),$targetName,Storage::disk('local')->get($imgName));
+                        OSS::publicUpload(config('app.oss_bucket'),$targetName,storage_path('app/'.$imgName));
 
                     }catch (RequestException $e){
                         echo 'fail';
