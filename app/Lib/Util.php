@@ -334,7 +334,7 @@ class Util
      * @param null $chars
      * @return string
      */
-    function getRandomString($len, $chars=null)
+    public static function getRandomString($len, $chars=null)
     {
         if (is_null($chars)){
 
