@@ -323,8 +323,9 @@ class Util
      */
     public static function getSuffix($url)
     {
+        $suffixArr = explode('.',$url);
 
-        return $Suffix=end(explode('.',$url));
+        return end($suffixArr);
 
     }
 
