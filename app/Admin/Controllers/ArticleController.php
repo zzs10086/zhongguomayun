@@ -154,42 +154,6 @@ class ArticleController extends Controller
             $form->datetime('created_at','添加时间');
             $form->datetime('updated_at','修改时间');
             $form->saving(function (Form $form) {
-                /*$content = $form->content['content'];
-
-                $imgUrlArr = Util::getImageUrl($content);
-                $imgReplaceArr = []; //替换后的
-
-                foreach($imgUrlArr as $k=>$v){
-
-                    $newUrl = '';
-
-                    try{
-
-                        $imgName = time().rand(1,999).'.jpg';
-
-                        $targetName = 'images/09/'.$imgName;
-
-                        $newUrl = config('app.upload_url').'/'.$targetName;
-
-                        $client =new Client();
-
-                        $data = $client->request('get',$v)->getBody()->getContents();
-
-                        Storage::disk('local')->put($imgName,$data);
-
-                        OSS::publicUpload(config('app.oss_bucket'),$targetName,storage_path('app/'.$imgName));
-
-                    }catch (RequestException $e){
-                        echo 'fail';
-                    }
-
-                    $imgReplaceArr[] = $newUrl;
-
-                }
-
-                $content = str_replace($imgUrlArr,$imgReplaceArr, $content);
-
-                $form->content['content'] = $content;*/
 
 
             });
@@ -203,36 +167,7 @@ class ArticleController extends Controller
 
                 $imgUrlArr = Util::getImageUrl($content);
 
-                /*$imgReplaceArr = []; //替换后的
-
-                foreach($imgUrlArr as $k=>$v){
-
-                    $newUrl = '';
-
-                    try{
-
-                        $imgName = time().rand(1,999).'.jpg';
-
-                        $targetName = 'images/09/'.$imgName;
-
-                        $newUrl = config('app.upload_url').'/'.$targetName;
-
-                        $client =new Client();
-
-                        $data = $client->request('get',$v)->getBody()->getContents();
-
-                        Storage::disk('local')->put($imgName,$data);
-
-                        OSS::publicUpload(config('app.oss_bucket'),$targetName,storage_path('app/'.$imgName));
-
-                    }catch (RequestException $e){
-                        echo 'fail';
-                    }
-
-                    $imgReplaceArr[] = $newUrl;
-
-                }*/
-
+                //上传oss
                 $ossImgUrlArr = Util::saveOssImg($imgUrlArr);
 
                 if($ossImgUrlArr){
@@ -244,7 +179,7 @@ class ArticleController extends Controller
                     $info->content = $content;
 
                     $info->save();
-                    
+
                 }
 
 
