@@ -12,4 +12,9 @@ class ArticleContent extends Model
     public $timestamps = false;
 
     protected $fillable = ['aid','content'];
+
+    public function setContentAttribute($value)
+    {
+        $this->attributes['content'] = $value;
+    }
 }
