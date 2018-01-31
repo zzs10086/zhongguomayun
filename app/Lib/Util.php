@@ -285,7 +285,7 @@ class Util
         foreach($imgUrlArr as $k=>$v){
 
             //如果已经上传oss过，则返回
-            if(strpos($v, 's1.zhangzhengshan.com')!==false) return false;
+            if(strpos($v, 's1.zhongguomayun.com')!==false) return false;
 
             $newUrl = '';
 
