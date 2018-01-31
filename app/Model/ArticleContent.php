@@ -13,8 +13,4 @@ class ArticleContent extends Model
 
     protected $fillable = ['aid','content'];
 
-    public function setContentAttribute($value)
-    {
-        $this->attributes['content'] = $value;
-    }
 }

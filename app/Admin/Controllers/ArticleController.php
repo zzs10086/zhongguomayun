@@ -17,6 +17,7 @@ use Illuminate\Http\Request;
 use App\Services\OSS;
 use Illuminate\Support\Facades\Storage;
 
+
 class ArticleController extends Controller
 {
     use ModelForm;
@@ -153,7 +154,7 @@ class ArticleController extends Controller
             $form->datetime('created_at','添加时间');
             $form->datetime('updated_at','修改时间');
             $form->saving(function (Form $form) {
-                $content = $form->content['content'];
+                /*$content = $form->content['content'];
 
                 $imgUrlArr = Util::getImageUrl($content);
                 $imgReplaceArr = []; //替换后的
@@ -188,11 +189,60 @@ class ArticleController extends Controller
 
                 $content = str_replace($imgUrlArr,$imgReplaceArr, $content);
 
-                //$form->ckeditor('content.content', $content);
-                $form->content['content'] = $content;
-                //admin_toastr('laravel-admin 提示','success');
+                $form->content['content'] = $content;*/
+
 
             });
+
+
+            $form->saved(function(Form $form){
+                
+                $id = $form->model()->getKey();
+
+                $content = $form->article['content'];
+
+                $imgUrlArr = Util::getImageUrl($content);
+                $imgReplaceArr = []; //替换后的
+
+                foreach($imgUrlArr as $k=>$v){
+
+                    $newUrl = '';
+
+                    try{
+
+                        $imgName = time().rand(1,999).'.jpg';
+
+                        $targetName = 'images/09/'.$imgName;
+
+                        $newUrl = config('app.upload_url').'/'.$targetName;
+
+                        $client =new Client();
+
+                        $data = $client->request('get',$v)->getBody()->getContents();
+
+                        Storage::disk('local')->put($imgName,$data);
+
+                        OSS::publicUpload(config('app.oss_bucket'),$targetName,storage_path('app/'.$imgName));
+
+                    }catch (RequestException $e){
+                        echo 'fail';
+                    }
+
+                    $imgReplaceArr[] = $newUrl;
+
+                }
+
+                $content = str_replace($imgUrlArr,$imgReplaceArr, $content);
+
+                $info = Article::where('id',$id)->first();
+
+                $info->content = $content;
+
+                $info->save();
+
+            });
+
+
         });
     }
 }
