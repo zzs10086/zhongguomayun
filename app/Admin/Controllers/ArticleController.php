@@ -125,7 +125,7 @@ class ArticleController extends Controller
 
             $grid->model()->orderBy('id', 'desc');
 
-            $grid->paginate(10);
+            $grid->paginate(20);
         });
     }
 
