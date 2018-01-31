@@ -154,16 +154,26 @@ class ArticleController extends Controller
             $form->datetime('updated_at','修改时间');
             $form->saving(function (Form $form) {
                 $content = $form->content['content'];
+
                 $imgUrlArr = Util::getImageUrl($content);
+                $imgReplaceArr = []; //替换后的
+
                 foreach($imgUrlArr as $k=>$v){
+
+                    $newUrl = '';
 
                     try{
 
-                        $imgName = time().'.jpg';
-                        $targetName = 'images/'.$imgName;
+                        $imgName = time().rand(1,999).'.jpg';
+
+                        $targetName = 'images/09/'.$imgName;
+
+                        $newUrl = config('app.upload_url').'/'.$targetName;
 
                         $client =new Client();
+
                         $data = $client->request('get',$v)->getBody()->getContents();
+
                         Storage::disk('local')->put($imgName,$data);
 
                         OSS::publicUpload(config('app.oss_bucket'),$targetName,storage_path('app/'.$imgName));
@@ -172,11 +182,13 @@ class ArticleController extends Controller
                         echo 'fail';
                     }
 
-                    exit;
+                    $imgReplaceArr[] = $newUrl;
+
                 }
-                echo '<pre>';
-                print_r($imgUrlArr);exit;
-                echo $content;exit;
+
+                $content = str_replace($imgUrlArr,$imgReplaceArr, $content);
+
+                $form->content['content'] = $content;
                 //admin_toastr('laravel-admin 提示','success');
 
             });
