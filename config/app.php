@@ -234,4 +234,8 @@ return [
     'm_url' => env('M_APP_URL', 'http://localhost'),
     'domain' => env('APP_DOMAIN', 'www.zhongguomayun.com'),
     'm_domain' => env('M_APP_DOMAIN', 'm.zhongguomayun.com'),
+
+    'ali_access_key_id' => env('ACCESS_KEY_ID', ''),
+    'ali_access_key_secret' => env('ACCESS_KEY_SECRET', ''),
+    'oss_bucket' => env('OSS_BUCKET', ''),
 ];

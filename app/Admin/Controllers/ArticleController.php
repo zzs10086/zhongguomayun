@@ -3,6 +3,7 @@
 namespace App\Admin\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Lib\Util;
 use App\Model\Article;
 use Encore\Admin\Controllers\ModelForm;
 use Encore\Admin\Facades\Admin;
@@ -11,6 +12,7 @@ use Encore\Admin\Grid;
 use Encore\Admin\Form;
 use App\Model\ArticleContent;
 use Illuminate\Http\Request;
+use App\Services\OSS;
 
 class ArticleController extends Controller
 {
@@ -148,6 +150,15 @@ class ArticleController extends Controller
             $form->datetime('created_at','添加时间');
             $form->datetime('updated_at','修改时间');
             $form->saving(function (Form $form) {
+                $content = $form->content['content'];
+                $imgUrlArr = Util::getImageUrl($content);
+                foreach($imgUrlArr as $k=>$v){
+                    OSS::publicUpload(config('app.oss_bucket'),'images/6666.jpg','/test666.jpg');
+                    exit;
+                }
+                echo '<pre>';
+                print_r($imgUrlArr);exit;
+                echo $content;exit;
                 //admin_toastr('laravel-admin 提示','success');
 
             });

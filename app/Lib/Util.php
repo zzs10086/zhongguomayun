@@ -247,4 +247,21 @@ class Util
         return false;
     }
 
+    /**
+     * 获取图片url
+     * @param $content
+     * @return bool
+     */
+    public static function getImageUrl($content){
+
+        preg_match_all("/(src)=[\"|\"| ]{0,}(http:\/\/(.*)\.(gif|jpg|jpeg|bmp|png|JPEG|GIF|PNG))[\"|\"| ]{0,}/isU", $content, $match);
+
+        if(isset($match[2]) && !empty($match[2])){
+
+            return $match[2];
+
+        }
+        return false;
+    }
+
 }
