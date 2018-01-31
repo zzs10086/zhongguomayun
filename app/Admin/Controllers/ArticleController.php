@@ -11,8 +11,11 @@ use Encore\Admin\Layout\Content;
 use Encore\Admin\Grid;
 use Encore\Admin\Form;
 use App\Model\ArticleContent;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\RequestException;
 use Illuminate\Http\Request;
 use App\Services\OSS;
+use Illuminate\Support\Facades\Storage;
 
 class ArticleController extends Controller
 {
@@ -153,7 +156,21 @@ class ArticleController extends Controller
                 $content = $form->content['content'];
                 $imgUrlArr = Util::getImageUrl($content);
                 foreach($imgUrlArr as $k=>$v){
-                    OSS::publicUpload(config('app.oss_bucket'),'images/6666.jpg','/tmp/test666.jpg');
+
+                    try{
+
+                        $imgName = '5.jpg';
+
+                        $client =new Client();
+                        $data = $client->request('get',$v)->getBody()->getContents();
+                        Storage::disk('local')->put($imgName,$data);
+
+                        OSS::publicUpload(config('app.oss_bucket'),'images/6666.jpg',Storage::disk('local')->get($imgName));
+
+                    }catch (RequestException $e){
+                        echo 'fail';
+                    }
+
                     exit;
                 }
                 echo '<pre>';

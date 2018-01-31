@@ -8,6 +8,7 @@
         "php": ">=7.0.0",
         "encore/laravel-admin": "^1.5",
         "fideloper/proxy": "~3.3",
+        "guzzlehttp/guzzle": "^6.3",
         "jacobcyl/ali-oss-storage": "dev-master",
         "johnlui/aliyun-oss": "^2.2",
         "laravel/framework": "5.5.*",
