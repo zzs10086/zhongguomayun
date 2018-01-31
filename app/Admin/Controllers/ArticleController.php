@@ -188,7 +188,8 @@ class ArticleController extends Controller
 
                 $content = str_replace($imgUrlArr,$imgReplaceArr, $content);
 
-                $form->content['content'] = $content;
+                $form->ckeditor('content.content', $content);
+                //$form->content['content'] = $content;
                 //admin_toastr('laravel-admin 提示','success');
 
             });
