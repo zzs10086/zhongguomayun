@@ -159,13 +159,14 @@ class ArticleController extends Controller
 
                     try{
 
-                        $imgName = '5.jpg';
+                        $imgName = time().'.jpg';
+                        $targetName = 'images/'.$imgName;
 
                         $client =new Client();
                         $data = $client->request('get',$v)->getBody()->getContents();
                         Storage::disk('local')->put($imgName,$data);
 
-                        OSS::publicUpload(config('app.oss_bucket'),'images/6666.jpg',Storage::disk('local')->get($imgName));
+                        OSS::publicUpload(config('app.oss_bucket'),$targetName,Storage::disk('local')->get($imgName));
 
                     }catch (RequestException $e){
                         echo 'fail';
