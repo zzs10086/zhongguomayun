@@ -160,6 +160,8 @@ a{color:#666; text-decoration:none;}
     padding-left: 10px;
     line-height: 25px;
     padding-bottom: 10px;
+    height:20px;
+    overflow: hidden;
 }
 .m_left .article-list{
     width:825px;
