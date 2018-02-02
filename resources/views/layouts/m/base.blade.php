@@ -37,6 +37,7 @@
             <a href="/video/">视频</a>
             <a href="/yulu/">语录</a>
             <a href="/alibaba/">阿里资讯</a>
+            <a href="/aligushi/">阿里故事</a>
         </div>
     </div>
 </div>

@@ -46,6 +46,7 @@ class Article extends Model
        2 =>'马云视频',
        3 =>'马云语录',
        4 =>'阿里资讯',
+       5 =>'阿里故事',
     ];
 
    /* public function getFlagAttribute($flag){

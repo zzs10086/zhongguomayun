@@ -35,6 +35,8 @@
                 <li class="line"></li>
                 <li><a href="/alibaba/">阿里资讯</a></li>
                 <li class="line"></li>
+                <li><a href="/aligushi/">阿里故事</a></li>
+                <li class="line"></li>
             </ul>
         </div>
     </div>
@@ -53,7 +55,7 @@
                 <div class="cq-photo"></div>
                 <div class="cq-wrapper">
                     <div class="cq-name">阿里巴巴董事局主席：马云</div>
-                    <div class="cq-info"><a href="">马云，男，1964年9月10日生于浙江省杭州市，祖籍浙江省嵊州市（原嵊县）谷来镇， 阿里巴巴集团主要创始人，现担任阿里巴巴集团董事局主席、日本软银董事、大自然保护协会中国理事会主席兼全球董事会成员、华谊兄弟董事、生命科学突破奖基金会董事。</a></div>
+                    <div class="cq-info"><a href="javascript:void(0);">马云，男，1964年9月10日生于浙江省杭州市，祖籍浙江省嵊州市（原嵊县）谷来镇， 阿里巴巴集团主要创始人，现担任阿里巴巴集团董事局主席、日本软银董事、大自然保护协会中国理事会主席兼全球董事会成员、华谊兄弟董事、生命科学突破奖基金会董事。</a></div>
                 </div>
 
             </div>
