@@ -1,6 +1,6 @@
 /*menu*/
 .menu{position: relative;padding-bottom:0.1rem;}
-.menu ul {clear: both;text-align: center;background: #f9f9f9;overflow: hidden;}
+.menu ul {clear: both;text-align: center;background: #f9f9f9;overflow: hidden;overflow-x:auto;white-space:nowrap;width:100%;}
 .menu li {display: inline-block;height:0.853333rem;line-height: 0.853333rem;font-size:0.4rem;width: 19%;}
 .menu li a { display: block; }
 .menuAdd{position: absolute;right:0;top:0;width: 0.753333rem;height:0.853333rem;}
