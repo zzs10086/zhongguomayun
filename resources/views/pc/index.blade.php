@@ -9,7 +9,7 @@
                     <ul>
                         @foreach($foucsNews as $k=>$v)
                         <li class="current">
-                            <a href="{{Util::createArcUrl($v['id'],$v['created_at'])}}" title="{{$v['title']}}" target="_blank">
+                            <a href="{{Util::createArcUrl($v['id'],$v['created_at'],$v['is_img'])}}" title="{{$v['title']}}" target="_blank">
                                 <img src="{{config('app.upload_url') . $v['thumb']}}" alt="{{$v['title']}}" width="745" height="340">
                                 <p class="text">{{$v['title']}}</p>
                             </a>
@@ -25,7 +25,7 @@
             <div class="title-a"> <h2>热度排行</h2></div>
             <ul class="d1">
                 @foreach($hotNews as $k=>$v)
-                <li> <span class="triangle"></span><a target="_blank" href="{{Util::createArcUrl($v['id'],$v['created_at'])}}" title="{{$v['title']}}">{{$v['title']}}</a> </li>
+                <li> <span class="triangle"></span><a target="_blank" href="{{Util::createArcUrl($v['id'],$v['created_at'],$v['is_img'])}}" title="{{$v['title']}}">{{$v['title']}}</a> </li>
                 @endforeach
             </ul>
         </div>
@@ -58,7 +58,7 @@
         @foreach($mayunNews as $k=>$v)
         <li>
             <div class="article-info">
-                <div class="art-img"><a href="{{Util::createArcUrl($v['id'],$v['created_at'])}}" title="{{$v['title']}}"><img src="{{config('app.upload_url') . $v['thumb']}}" alt="{{$v['title']}}"/></a></div>
+                <div class="art-img"><a href="{{Util::createArcUrl($v['id'],$v['created_at'],$v['is_img'])}}" title="{{$v['title']}}"><img src="{{config('app.upload_url') . $v['thumb']}}" alt="{{$v['title']}}"/></a></div>
                 <div class="art-info">
                     <p class="art-title"><a href="{{Util::createArcUrl($v['id'],$v['created_at'])}}" target="_blank" title="{{$v['title']}}">{{$v['title']}}</a></p>
                     <p class="art-desc"><a href="{{Util::createArcUrl($v['id'],$v['created_at'])}}" target="_blank" title="{{$v['title']}}">{{$v['description']}}</a></p>
