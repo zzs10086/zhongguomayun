@@ -45,7 +45,7 @@
     </div>
 </div>
 <!-- end -->
-<!-- 推荐阅读 -->
+<!-- 畅言评论 -->
 <div class="chanyanTit">
     <span>热门评论</span>
 </div>

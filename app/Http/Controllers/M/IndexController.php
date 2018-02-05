@@ -176,7 +176,8 @@ class IndexController extends Controller
             'relevant' => $relevant,
             'current' => $category['category_name'],
             'category_id' =>$article['catid'],
-            'click' => $clickArr['click']
+            'click' => $clickArr['click'],
+             'id' => $id,
         );
         return view('m.video',$data);
     }
