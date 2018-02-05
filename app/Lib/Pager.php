@@ -100,6 +100,7 @@ class Pager{
                 $links .= '<li><a href="' . self::_link($total_page, $path_deep, $path_type) . '">下一页</a></li>';
             }
         }
+
         if($options['current_page']<$total_page){
             $links .= '<li><a href="' . self::_link($total_page, $path_deep, $path_type) . '">尾页</a></li>';
         }
