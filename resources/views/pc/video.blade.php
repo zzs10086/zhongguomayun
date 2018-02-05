@@ -20,7 +20,7 @@
             <!--中间内容 START-->
             <div class="fl center_video">
                 <div class="tt_video">
-                    <video id="my-video" class="video-js" controls preload="auto" width="780" height="450"
+                    <video id="my-video" class="video-js vjs-big-play-centered" controls preload="auto" width="780" height="450"
                            data-setup="{}">
                         <source src="{{$article['video_url']}}" type="video/mp4">
                     </video>

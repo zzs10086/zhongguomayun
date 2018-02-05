@@ -6,7 +6,7 @@
 @section('content')
 <!-- video -->
 <div class="y_video">
-    <video id="my-video" class="video-js" controls preload="auto"  data-setup="{}">
+    <video id="my-video" class="video-js vjs-big-play-centered" controls preload="auto"  data-setup="{}">
         <source src="{{$article['video_url']}}" type="video/mp4">
     </video>
     <script src="<?php echo env('APP_STATIC_URL');?>/m/js/video.min.js"></script>
