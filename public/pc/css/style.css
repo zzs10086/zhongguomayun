@@ -577,3 +577,9 @@ a{color:#666; text-decoration:none;}
 #fixedBtn .down { background-position: 0 -165px; }
 #fixedBtn a:hover { background: #7C7C7C; color: #fff !important; text-decoration: none; text-indent: 0; }
 #fixedBtn { margin-left: 1206px; }
+
+/*畅言*/
+.a-cont .a-chanyan{
+    clear: both;
+
+}

@@ -43,7 +43,7 @@
 
                 </ul>
             </div>
-            <div class="a-relevant">
+            <div class="a-chanyan">
                 <div class="title-a"><h2>热门评论</h2></div>
                 <!--PC版-->
                 <div id="SOHUCS" sid="sohucs{{$id}}"></div>
