@@ -14,7 +14,7 @@
     <script type="text/javascript" src="<?php echo config('app.static_url');?>/m/js/flexible.js"></script>
     <script type="text/javascript" src="<?php echo config('app.static_url');?>/m/js/flexible_css.js"></script>
     <script type="text/javascript" src="<?php echo config('app.static_url');?>/m/js/TouchSlide.js"></script>
-    <script type="text/javascript" src="<?php echo config('app.static_url');?>/m/js/global.js"></script>
+
     @yield('css')
 </head>
 <body>
