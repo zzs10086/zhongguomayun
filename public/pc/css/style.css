@@ -487,6 +487,7 @@ a{color:#666; text-decoration:none;}
 .htvideo ul li a{display: block;color:#222;}
 .htvideo ul li img{
     width: 180px;
+    height: 140px;
 }
 
 .vitem{position: relative;}
@@ -506,7 +507,7 @@ a{color:#666; text-decoration:none;}
     -o-transform: rotate(360deg);
     -ms-transform: rotate(360deg);
 }
-.vTit{font-size: 14px;height: 40px;line-height: 20px;overflow: hidden;text-overflow: ellipsis;}
+.vTit{font-size: 14px;height: 30px;line-height:30px;overflow: hidden;text-overflow: ellipsis;}
 
 /*page*/
 .page_area { margin: 10px 0; }
