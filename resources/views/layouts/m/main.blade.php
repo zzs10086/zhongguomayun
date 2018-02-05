@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimal-ui" charset="UTF-8">
     <title>{{$title}}-中国马云</title>
     <meta name="description" content="{{$keyword}}" />
     <meta name="keywords" content="{{$description}}" />
@@ -17,23 +18,25 @@
     @yield('css')
 </head>
 <body>
-<header class="header">
-    <div class="nav">
-        <span class="logo"><img src="<?php echo config('app.static_url');?>/m/images/logo.png"></span>
+<div class="outer">
+    <header class="header">
+        <div class="nav">
+            <span class="logo"><img src="<?php echo config('app.static_url');?>/m/images/logo.png"></span>
+        </div>
+    </header>
+    <div class="menu">
+        <ul>
+            <li><a href="/">首页</a></li>
+            <li><a href="/news/">资讯</a></li>
+            <li><a href="/video/">视频</a></li>
+            <li><a href="/yulu/">语录</a></li>
+            <li><a href="/alibaba/">阿里资讯</a></li>
+            <li><a href="/aligushi/">阿里故事</a></li>
+        </ul>
     </div>
-</header>
-<div class="menu">
-    <ul>
-        <li><a href="/">首页</a></li>
-        <li><a href="/news/">资讯</a></li>
-        <li><a href="/video/">视频</a></li>
-        <li><a href="/yulu/">语录</a></li>
-        <li><a href="/alibaba/">阿里资讯</a></li>
-        <li><a href="/aligushi/">阿里故事</a></li>
-    </ul>
-</div>
 
-@yield('content')
+    @yield('content')
+</div>
         <!-- jQuery1.7以上 或者 Zepto 二选一，不要同时都引用 -->
 <script src="<?php echo config('app.static_url');?>/m/js/dropload.min.js"></script>
 <script language="javascript">
@@ -142,6 +145,6 @@
         s.parentNode.insertBefore(bp, s);
     })();
 </script>
-<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1272853601'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/stat.php%3Fid%3D1272853601' type='text/javascript'%3E%3C/script%3E"));</script>
+<div style="display: none;"><script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1272853601'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/stat.php%3Fid%3D1272853601' type='text/javascript'%3E%3C/script%3E"));</script></div>
 </body>
 </html>
