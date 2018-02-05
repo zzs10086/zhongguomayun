@@ -202,7 +202,8 @@ class IndexController extends Controller
             'count' => $count,
             'relevant' => $relevant,
             'mURL' => self::$mUrl,
-            'click' => $clickArr['click']
+            'click' => $clickArr['click'],
+            'id'=>$id
 
         );
 

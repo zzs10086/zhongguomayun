@@ -46,7 +46,7 @@
             <div class="a-relevant">
                 <div class="title-a"><h2>热门评论</h2></div>
                 <!--PC版-->
-                <div id="SOHUCS" sid="mayun"></div>
+                <div id="SOHUCS" sid="sohucs{{$id}}"></div>
                 <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
                 <script type="text/javascript">
                     window.changyan.api.config({
