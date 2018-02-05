@@ -7,6 +7,8 @@
     <title>{{$title}}-中国马云</title>
     <meta name="keywords" content="{{$keyword}}" />
     <meta name="description" content="{{$description}}" />
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
     <link rel="stylesheet" type="text/css" href="<?php echo config('app.static_url');?>/m/css/global.css">
     <link rel="stylesheet" type="text/css" href="<?php echo config('app.static_url');?>/m/css/index.css">
     <link rel="stylesheet" type="text/css" href="<?php echo config('app.static_url');?>/m/css/dropload.css">
@@ -38,7 +40,8 @@
 
     @yield('content')
 </div>
-        <!-- jQuery1.7以上 或者 Zepto 二选一，不要同时都引用 -->
+
+<!-- jQuery1.7以上 或者 Zepto 二选一，不要同时都引用 -->
 <script src="<?php echo config('app.static_url');?>/m/js/dropload.min.js"></script>
 <script language="javascript">
     $(function(){
@@ -81,12 +84,10 @@
                                     +'</div>'
                                     +'</div>';
                         }
-                        // 为了测试，延迟1秒加载
-                        setTimeout(function(){
-                            $('#result').html(result);
-                            // 每次数据加载完，必须重置
-                            dropload.resetload();
-                        },1000);
+
+                        $('#result').html(result);
+                        // 每次数据加载完，必须重置
+                        dropload.resetload();
                     },
                     error: function(xhr, type){
                         alert('Ajax error!');
@@ -119,12 +120,9 @@
                                     +'</div>'
                                     +'</div>';
                         }
-                        // 为了测试，延迟1秒加载
-                        setTimeout(function(){
-                            $('#result').append(result);
-                            // 每次数据加载完，必须重置
-                            dropload.resetload();
-                        },1000);
+                        $('#result').append(result);
+                        // 每次数据加载完，必须重置
+                        dropload.resetload();
                     },
                     error: function(xhr, type){
                         alert('Ajax error!');

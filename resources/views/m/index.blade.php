@@ -15,7 +15,7 @@
     </div>
 </div>
 <script type="text/javascript">
-    TouchSlide({
+  TouchSlide({
         slideCell:"#slideBox",
         titCell:".hd ul",
         mainCell:".bd ul",
