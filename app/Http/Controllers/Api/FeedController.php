@@ -15,7 +15,6 @@ class FeedController extends Controller
 
         $page = Input::get('page');
         $category_id = Input::get('category_id') ? Input::get('category_id') : 0;
-        $site = Input::get('site', 'pc');
         $_callback = Input::get('_callback');
         $limit = Input::get('limit') ? Input::get('limit') : 10;
 
