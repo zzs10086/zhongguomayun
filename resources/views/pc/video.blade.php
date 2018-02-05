@@ -26,11 +26,12 @@
                     </video>
                     <script src="<?php echo config('app.static_url');?>/pc/js/video.min.js"></script>
                     <script type="text/javascript">
-                        var myPlayer = videojs('my-video');
+                        //自动播放
+                       /* var myPlayer = videojs('my-video');
                         videojs("my-video").ready(function(){
                             var myPlayer = this;
                             myPlayer.play();
-                        });
+                        });*/
                     </script>
                 </div>
                 <div class="share_video">
