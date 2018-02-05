@@ -139,7 +139,8 @@ class IndexController extends Controller
             'relevant' => $relevant,
             'current' =>$category['category_name'],
             'category_id' =>$category_id,
-            'click' => $clickArr['click']
+            'click' => $clickArr['click'],
+            'id' => $id,
 
         );
 
