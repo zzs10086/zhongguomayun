@@ -235,7 +235,8 @@ class IndexController extends Controller
             'relevant' => $relevant,
             'hotVideo' => $hotVideo,
             'mURL' => self::$mUrl,
-            'click' => $clickArr['click']
+            'click' => $clickArr['click'],
+             'id'=>$id
         );
 
         return view('pc.video',$data);

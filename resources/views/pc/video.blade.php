@@ -100,11 +100,12 @@
 
         <div class="clear"></div>
         <!--相关文章-->
+        @if($relevant)
         <div class="a-hotvideo">
             <div class="title-a"><h2>热门视频</h2></div>
             <div class="htvideo">
                 <ul>
-                    @foreach($hotVideo as $k=>$v)
+                    @foreach($relevant as $k=>$v)
                     <li>
                         <a href="{{Util::createArcUrl($v['id'],$v['created_at'],$v['is_img'])}}" target="_blank" class="vitem" title="{{$v['title']}}">
                             <img src="{{config('app.upload_url') . $v['thumb']}}">
@@ -120,26 +121,23 @@
             </div>
 
         </div>
-        <!--相关文章-->
-        @if($relevant)
-        <div class="a-relevant">
-            <div class="title-a"><h2>更多视频</h2></div>
-            <ul>
-                @foreach($relevant as $k=>$v)
-                    <li>
-                        <div class="a-article-info">
-                            <div class="a-art-img"><a href="{{Util::createArcUrl($v['id'],$v['created_at'],$v['is_img'])}}"><img src="{{config('app.upload_url') . $v['thumb']}}" alt="{{$v['title']}}"/></a></div>
-                            <div class="a-art-info">
-                                <p class="a-art-title"><a href="{{Util::createArcUrl($v['id'],$v['created_at'],$v['is_img'])}}" target="_blank" title="{{$v['title']}}">{{$v['title']}}</a></p>
-                                <p class="a-art-desc"><a href="{{Util::createArcUrl($v['id'],$v['created_at'],$v['is_img'])}}" target="_blank" title="{{$v['title']}}">{{$v['description']}}</a></p>
-                                <p><span class="a-art-time">{{$v['created_at']}}</span><span>阅读({{$v['click']}})</span></p>
-                            </div>
-                        </div>
-                    </li>
-                @endforeach
-            </ul>
-        </div>
         @endif
+        <!--相关文章-->
+
+        <div class="a-relevant">
+            <div class="title-a"><h2>热门评论</h2></div>
+            <!--PC版-->
+            <div id="SOHUCS" sid="sohucs{{$id}}"></div>
+            <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
+            <script type="text/javascript">
+                window.changyan.api.config({
+                    appid: 'cyrHuPjAo',
+                    conf: 'prod_2b6e4633ad581f342ee4bb78f9a57081'
+                });
+            </script>
+
+        </div>
+
 
     </div>
 </div>
