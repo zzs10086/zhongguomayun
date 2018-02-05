@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>{{$title}}-中国马云</title>
-    <meta name="description" content="{{$keyword}}" />
-    <meta name="keywords" content="{{$description}}" />
+    <meta name="keywords" content="{{$keyword}}" />
+    <meta name="description" content="{{$description}}" />
     <link rel="stylesheet" type="text/css" href="<?php echo config('app.static_url');?>/m/css/global.css">
     <link rel="stylesheet" type="text/css" href="<?php echo config('app.static_url');?>/m/css/article.css">
     <link rel="stylesheet" type="text/css" href="<?php echo config('app.static_url');?>/m/css/dropload.css">

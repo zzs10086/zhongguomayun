@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>{{$title}}-中国马云</title>
-    <meta name="description" content="{{$keyword}}" />
-    <meta name="keywords" content="{{$description}}" />
+    <meta name="keywords" content="{{$keyword}}" />
+    <meta name="description" content="{{$description}}" />
     <link rel="shortcut icon" href="<?php echo config('app.static_url');?>/pc/images/favicon.ico" type="image/x-icon" />
     <link href="<?php echo config('app.static_url');?>/pc/css/style.css" rel="stylesheet" media="screen" type="text/css" />
 
