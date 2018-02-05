@@ -69,11 +69,9 @@
 
                         }
                         // 为了测试，延迟1秒加载
-                        setTimeout(function(){
-                            $('#result').html(result);
-                            // 每次数据加载完，必须重置
-                            dropload.resetload();
-                        },1000);
+                        $('#result').html(result);
+                        // 每次数据加载完，必须重置
+                        dropload.resetload();
                     },
                     error: function(xhr, type){
                         alert('Ajax error!');
@@ -119,12 +117,9 @@
                             }
 
                         }
-                        // 为了测试，延迟1秒加载
-                        setTimeout(function(){
-                            $('#result').append(result);
-                            // 每次数据加载完，必须重置
-                            dropload.resetload();
-                        },1000);
+                        $('#result').append(result);
+                        // 每次数据加载完，必须重置
+                        dropload.resetload();
                     },
                     error: function(xhr, type){
                         alert('Ajax error!');
