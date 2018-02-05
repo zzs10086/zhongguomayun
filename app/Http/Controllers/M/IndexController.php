@@ -141,7 +141,8 @@ class IndexController extends Controller
             'preBtn' => $preBtn,
             'nextBtn' => $nextBtn,
             'relevant' => $relevant,
-            'current' =>$category['category_name']
+            'current' =>$category['category_name'],
+            'category_id' =>$category_id
 
         );
 
@@ -176,7 +177,8 @@ class IndexController extends Controller
             'description' => $article['description'],
             'article' => $article,
             'relevant' => $relevant,
-            'current' => $category['category_name']
+            'current' => $category['category_name'],
+            'category_id' =>$article['catid']
         );
         return view('m.video',$data);
     }
