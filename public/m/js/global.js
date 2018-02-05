@@ -29,7 +29,7 @@ window.onload = function() {
     },1);
   };
   controler.onclick = menuslide;
-  upIcon_lanmu.onclick = menuslide;
+  //upIcon_lanmu.onclick = menuslide;
 };
 
 $(function(){

@@ -33,7 +33,7 @@ class IndexController extends Controller
      * @param int $page
      * @return mixed
      */
-    public function category($cateName=''){
+    public function category($cateName='', $page = 1){
 
         //获取分类
         $categoryEn = Category::getAllCategoryNameEn();
