@@ -16,14 +16,12 @@ class IndexController extends Controller
         //幻灯
         $foucsNews = Article::getFlagArc('f', 6);
 
-        //$list = Article::getArcList(0, 1, 20);
 
         $data = array(
             'title' => '【马云】马云资料大全_马云演讲视频整理_马云的最新消息、动态',
             'keyword' => '马云资料大全、马云演讲视频、马云的最新消息、Jack Ma',
-            'description' => '马云是是中国的骄傲，也是世界上难得的成功企业界。中国马云网为你提供马云全部资料、演讲视频、马云最新动态相关新闻！想了解最新最全的马云消息，关注中国马云网zhongguomayun.com！',
+            'description' => '马云是中国的骄傲，也是世界上著名的成功企业家。中国马云网为你提供马云全部资料、演讲视频、马云最新动态相关新闻！想了解最新最全的马云消息，关注中国马云网zhongguomayun.com！',
             'foucsNews' => $foucsNews,
-            //'list' => $list,
         );
 
         return view('m.index', $data);
@@ -35,7 +33,7 @@ class IndexController extends Controller
      * @param int $page
      * @return mixed
      */
-    public function category($cateName='', $page = 1){
+    public function category($cateName=''){
 
         //获取分类
         $categoryEn = Category::getAllCategoryNameEn();
@@ -46,18 +44,11 @@ class IndexController extends Controller
 
         $category_id = $category['id'];
 
-        $limit = 10;
-
-        /*$list = Article::getArcList($category_id, $page, $limit);
-
-        $count = Article::getArcCounts($category_id);*/
-
 
         $data = array(
             'title' => $category['seo_title'],
             'keyword' =>$category['seo_keywords'],
             'description' => $category['seo_description'],
-            //'list'=>$list,
             'category_id'=>$category_id,
             'current' =>$category['category_name']
         );
