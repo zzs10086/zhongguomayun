@@ -41,18 +41,32 @@
                     success: function(data){
                         var result = '';
                         for(var i = 0; i < data.data.length; i++){
-                            result +=   '<div class="newsList">'
-                                    +'<div class="img">'
-                                    +'<a href="'+data.data[i].url+'">'
-                                    +'<img src="'+data.data[i].imgurl+'" alt="'+data.data[i].title+'">'
-                                    +'</a>'
-                                    +'</div>'
-                                    +'<h2><a href="'+data.data[i].url+'">'+data.data[i].title+'</a></h2>'
-                                    +'<div class="newsInfo">'
-                                    + '<span class="time">'+data.data[i].created_at+'</span>'
-                                    + '<span class="weizhi">阅读('+data.data[i].click+')</span>'
-                                    +'</div>'
-                                    +'</div>';
+                            if(data.data[i].catid == 3){
+
+                                result +=   '<div class="newsList">'
+                                        +'<h2><a href="'+data.data[i].url+'">'+data.data[i].title+'</a></h2>'
+                                        +'<div class="newsInfo">'
+                                        + '<span class="time">'+data.data[i].created_at+'</span>'
+                                        + '<span class="weizhi">阅读('+data.data[i].click+')</span>'
+                                        +'</div>'
+                                        +'</div>';
+                            }else{
+
+                                result +=   '<div class="newsList">'
+                                        +'<div class="img">'
+                                        +'<a href="'+data.data[i].url+'">'
+                                        +'<img src="'+data.data[i].imgurl+'" alt="'+data.data[i].title+'">'
+                                        +'</a>'
+                                        +'</div>'
+                                        +'<h2><a href="'+data.data[i].url+'">'+data.data[i].title+'</a></h2>'
+                                        +'<div class="newsInfo">'
+                                        + '<span class="time">'+data.data[i].created_at+'</span>'
+                                        + '<span class="weizhi">阅读('+data.data[i].click+')</span>'
+                                        +'</div>'
+                                        +'</div>';
+
+                            }
+
                         }
                         // 为了测试，延迟1秒加载
                         setTimeout(function(){

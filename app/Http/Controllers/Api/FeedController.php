@@ -32,7 +32,8 @@ class FeedController extends Controller
                     'id' => $v['id'],
                     'url' => Util::createArcUrl($v['id'],$v['created_at'],$v['is_img'],'m'),
                     'click' => $v['click'],
-                    'created_at' => $v['created_at']
+                    'created_at' => $v['created_at'],
+                    'catid' => $v['catid'],
                 );
 
             }
