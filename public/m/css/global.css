@@ -56,14 +56,17 @@ a{ text-decoration: none; color: #333}
 .all_lanmu_line { width: 100%; margin-top: 0.4rem; display: block; background-color: #fdfdfd;padding-bottom:0.3rem; }
 .all_lanmu_line a { margin-top: 0.133333rem; height: 0.82rem; width: 1.7rem; line-height:0.82rem; background-color: #fff; border: #ddd 1px solid; color: #666; font-size: 0.4rem; display: inline-block; text-align: center; }
 
-.inner{
+.outer{
     -webkit-box-flex: 1;
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
     background-color: #fff;
-    overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
+    overflow-y: scroll;
+}
+.inner{
+
 }
 .inner .item{
     display: -webkit-box;
