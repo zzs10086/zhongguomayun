@@ -215,4 +215,63 @@ class Article extends Model
 
         return $data;
     }
+
+    /**
+     * 获取文章阅读量
+     * @param $id
+     * @return array|mixed
+     */
+    public static function getArcRead($id)
+    {
+
+        $key = "getArcRead:" . $id;
+
+        $data = Util::getRedis($key, true);
+
+        if (!$data) {
+
+            $where = [['id', $id]];
+
+            $res = Article::where($where)->first()->toArray();
+
+            $data = array(
+                'click' => isset($res['click']) ? $res['click'] : 0,
+                'count' => 0
+            );
+
+            Util::setRedis($key, $data, -1);
+        }
+
+        return $data;
+    }
+
+    /**
+     * 保存文章阅读量
+     * @param $id
+     */
+    public static function setArcRead($id)
+    {
+
+        $key = "getArcRead:" . $id;
+
+        $data = self::getArcRead($id);
+
+        $data['click']++;
+
+        //count 超过10次就提交数据库
+        if ($data['count'] >= 10) {
+
+            Article::where([['id', $id]])->update(['click' => $data['click']]);
+
+            $data['count'] = 0;
+
+        } else {
+
+            $data['count']++;
+        }
+
+
+        Util::setRedis($key, $data, -1);
+
+    }
 }

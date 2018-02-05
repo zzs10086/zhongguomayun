@@ -175,8 +175,12 @@ class IndexController extends Controller
 
         if($page > $count)  abort(404);
 
-        //相关文章
+        //阅读数量 +1
+        Article::setArcRead($id);
 
+        $clickArr = Article::getArcRead($id);
+
+        //相关文章
         $relevant = Article::getArcRelevant($article['catid'], $id, 6);
 
         $paginate = Paginate::_detailPage([
@@ -198,11 +202,10 @@ class IndexController extends Controller
             'count' => $count,
             'relevant' => $relevant,
             'mURL' => self::$mUrl,
+            'click' => $clickArr['click']
 
         );
 
-        //文章阅读量+1
-        Article::findOrFail($id)->increment('click');
 
         return view('pc.show', $data);
     }
@@ -211,6 +214,11 @@ class IndexController extends Controller
 
         $article = Article::getArcInfo($id);
         if(date('Ymd', strtotime($article['created_at'])) !== $time) abort(404);
+
+        //阅读数量 +1
+        Article::setArcRead($id);
+
+        $clickArr = Article::getArcRead($id);
 
         //相关视频
         $relevant = Article::getArcRelevant($article['catid'], $id, 6);
@@ -226,10 +234,9 @@ class IndexController extends Controller
             'relevant' => $relevant,
             'hotVideo' => $hotVideo,
             'mURL' => self::$mUrl,
+            'click' => $clickArr['click']
         );
 
-        //文章阅读量+1
-        Article::findOrFail($id)->increment('click');
         return view('pc.video',$data);
     }
 }

@@ -119,6 +119,11 @@ class IndexController extends Controller
 
         }
 
+        //阅读数量 +1
+        Article::setArcRead($id);
+
+        $clickArr = Article::getArcRead($id);
+
         //相关文章
         $relevant = Article::getArcRelevant($article['catid'], $id, 6);
 
@@ -133,12 +138,10 @@ class IndexController extends Controller
             'nextBtn' => $nextBtn,
             'relevant' => $relevant,
             'current' =>$category['category_name'],
-            'category_id' =>$category_id
+            'category_id' =>$category_id,
+            'click' => $clickArr['click']
 
         );
-
-        //文章阅读量+1
-        Article::findOrFail($id)->increment('click');
 
         return view('m.show', $data);
     }
@@ -156,11 +159,13 @@ class IndexController extends Controller
 
         $category = Category::getCategoryById($article['catid'] );
 
+        //阅读数量 +1
+        Article::setArcRead($id);
+
+        $clickArr = Article::getArcRead($id);
+
         //相关文章
         $relevant = Article::getArcRelevant($article['catid'], $id, 6);
-
-        //文章阅读量+1
-        Article::findOrFail($id)->increment('click');
 
         $data = array(
             'title' => $article['title'] . '_' . config('app.name'),
@@ -169,7 +174,8 @@ class IndexController extends Controller
             'article' => $article,
             'relevant' => $relevant,
             'current' => $category['category_name'],
-            'category_id' =>$article['catid']
+            'category_id' =>$article['catid'],
+            'click' => $clickArr['click']
         );
         return view('m.video',$data);
     }
