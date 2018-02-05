@@ -26,9 +26,9 @@
 </script>
 <!-- end -->
 <!-- 热门文章 -->
-<div class="news">
+<div class="news inner">
     <div id="result">
-        @foreach($list as $k=>$v)
+       {{-- @foreach($list as $k=>$v)
         <div class="newsList">
             @if($v['catid'] != 3)
             <div class="img">
@@ -46,7 +46,7 @@
 
             </div>
         </div>
-        @endforeach
+        @endforeach--}}
 
     </div>
 </div>

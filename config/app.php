@@ -230,6 +230,7 @@ return [
     ],
 
     'static_url' => env('APP_STATIC_URL', 'http://static.zhongguomayun.com'),
+    'api_app_url' => env('API_APP_URL', 'http://www.zhongguomayun.com'),
     'upload_url' => env('APP_UPLOAD_URL', 'http://s1.zhongguomayun.com'),
     'm_url' => env('M_APP_URL', 'http://localhost'),
     'domain' => env('APP_DOMAIN', 'www.zhongguomayun.com'),

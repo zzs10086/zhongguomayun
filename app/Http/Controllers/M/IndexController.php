@@ -16,14 +16,14 @@ class IndexController extends Controller
         //幻灯
         $foucsNews = Article::getFlagArc('f', 6);
 
-        $list = Article::getArcList(0, 1, 20);
+        //$list = Article::getArcList(0, 1, 20);
 
         $data = array(
             'title' => '【马云】马云资料大全_马云演讲视频整理_马云的最新消息、动态_中国马云',
             'keyword' => '马云资料大全、马云演讲视频、马云的最新消息、Jack Ma',
             'description' => '马云是是中国的骄傲，也是世界上难得的成功企业界。中国马云网为你提供马云全部资料、演讲视频、马云最新动态相关新闻！想了解最新最全的马云消息，关注中国马云网zhongguomayun.com！',
             'foucsNews' => $foucsNews,
-            'list' => $list,
+            //'list' => $list,
         );
 
         return view('m.index', $data);
@@ -48,16 +48,16 @@ class IndexController extends Controller
 
         $limit = 10;
 
-        $list = Article::getArcList($category_id, $page, $limit);
+        /*$list = Article::getArcList($category_id, $page, $limit);
 
-        $count = Article::getArcCounts($category_id);
+        $count = Article::getArcCounts($category_id);*/
 
 
         $data = array(
             'title' => $category['seo_title'],
             'keyword' =>$category['seo_keywords'],
             'description' => $category['seo_description'],
-            'list'=>$list,
+            //'list'=>$list,
             'category_id'=>$category_id,
             'current' =>$category['category_name']
         );
