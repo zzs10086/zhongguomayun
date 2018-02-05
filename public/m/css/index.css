@@ -8,7 +8,7 @@
 .menuAdd img{width: 0.48rem;height: 0.48rem;position: absolute;z-index: 2;top:0.133333rem;right: 0}
 
 /*slide*/
-.slideBox{position:relative;overflow:hidden;}
+.slideBox{position:relative;}
 .slideBox .bd{ position:relative; z-index:0;width:100%;height: 4.833333rem; }
 .slideBox .bd li{ position:relative; text-align:center;width:100%;  }
 .slideBox .bd li img{vertical-align:top; width:100%;height:4.833333rem; }
