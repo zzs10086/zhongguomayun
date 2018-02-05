@@ -49,12 +49,11 @@
 <div class="chanyanTit">
     <span>热门评论</span>
 </div>
-<div class="chanyanList">
-    <!--WAP版-->
-    <div id="SOHUCS" sid="sohucs{{$id}}" ></div>
-    <script id="changyan_mobile_js" charset="utf-8" type="text/javascript"
-            src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=cyrHuPjAo&conf=prod_2b6e4633ad581f342ee4bb78f9a57081">
-    </script>
-</div>
+
+<!--WAP版-->
+<div id="SOHUCS" sid="sohucs{{$id}}" ></div>
+<script id="changyan_mobile_js" charset="utf-8" type="text/javascript"
+        src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=cyrHuPjAo&conf=prod_2b6e4633ad581f342ee4bb78f9a57081">
+</script>
 
 @stop
