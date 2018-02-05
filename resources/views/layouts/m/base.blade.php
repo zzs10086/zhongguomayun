@@ -11,7 +11,7 @@
     <script type="text/javascript" src="<?php echo config('app.static_url');?>/m/js/zepto.min.js"></script>
     <script type="text/javascript" src="<?php echo config('app.static_url');?>/m/js/flexible.js"></script>
     <script type="text/javascript" src="<?php echo config('app.static_url');?>/m/js/flexible_css.js"></script>
-    <!--<script type="text/javascript" src="<?php echo config('app.static_url');?>/m/js/global.js"></script>-->
+    <script type="text/javascript" src="<?php echo config('app.static_url');?>/m/js/global.js"></script>
     @yield('css')
 </head>
 <body>
@@ -49,7 +49,10 @@
 <!-- jQuery1.7以上 或者 Zepto 二选一，不要同时都引用 -->
 <script src="<?php echo config('app.static_url');?>/m/js/dropload.min.js"></script>
 <script language="javascript">
+
+    var page = 0;
     var category_id = {{$category_id}};
+
     $(function(){
 
         // dropload
@@ -70,7 +73,7 @@
                 $.ajax({
                     type: 'GET',
                     url: '<?php echo config('app.api_app_url');?>/api/feed',
-                    data:{'category_id':category_id},
+                    data:{'category_id':category_id, 'page':page},
                     dataType:"jsonp",
                     jsonp:"_callback",
                     success: function(data){
@@ -104,10 +107,11 @@
                 });
             },
             loadDownFn : function(me){
+                page++;
                 $.ajax({
                     type: 'GET',
                     url: '<?php echo config('app.api_app_url');?>/api/feed',
-                    data:{'category_id':category_id},
+                    data:{'category_id':category_id, 'page':page},
                     dataType:"jsonp",
                     jsonp:"_callback",
                     success: function(data){

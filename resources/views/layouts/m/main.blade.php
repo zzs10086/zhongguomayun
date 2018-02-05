@@ -14,6 +14,7 @@
     <script type="text/javascript" src="<?php echo config('app.static_url');?>/m/js/flexible.js"></script>
     <script type="text/javascript" src="<?php echo config('app.static_url');?>/m/js/flexible_css.js"></script>
     <script type="text/javascript" src="<?php echo config('app.static_url');?>/m/js/TouchSlide.js"></script>
+    <script type="text/javascript" src="<?php echo config('app.static_url');?>/m/js/global.js"></script>
 
     @yield('css')
 </head>
@@ -42,6 +43,7 @@
 <script language="javascript">
     $(function(){
 
+        var page = 0;
         // dropload
         var dropload = $('.inner').dropload({
             domUp : {
@@ -60,6 +62,7 @@
                 $.ajax({
                     type: 'GET',
                     url: '<?php echo config('app.api_app_url');?>/api/feed',
+                    data:{'page':page},
                     dataType:"jsonp",
                     jsonp:"_callback",
                     success: function(data){
@@ -93,9 +96,11 @@
                 });
             },
             loadDownFn : function(me){
+                page++;
                 $.ajax({
                     type: 'GET',
                     url: '<?php echo config('app.api_app_url');?>/api/feed',
+                    data:{'page':page},
                     dataType:"jsonp",
                     jsonp:"_callback",
                     success: function(data){
