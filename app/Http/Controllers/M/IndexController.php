@@ -19,7 +19,7 @@ class IndexController extends Controller
         //$list = Article::getArcList(0, 1, 20);
 
         $data = array(
-            'title' => '【马云】马云资料大全_马云演讲视频整理_马云的最新消息、动态_中国马云',
+            'title' => '【马云】马云资料大全_马云演讲视频整理_马云的最新消息、动态',
             'keyword' => '马云资料大全、马云演讲视频、马云的最新消息、Jack Ma',
             'description' => '马云是是中国的骄傲，也是世界上难得的成功企业界。中国马云网为你提供马云全部资料、演讲视频、马云最新动态相关新闻！想了解最新最全的马云消息，关注中国马云网zhongguomayun.com！',
             'foucsNews' => $foucsNews,
