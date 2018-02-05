@@ -4,7 +4,7 @@ var time = 300;
 var timer = null;
 var toggled = false;
  
-/*window.onload = function() {
+window.onload = function() {
   var controler = document.getElementById('slide');
   var slider = document.getElementById('slider');
   var upIcon_lanmu = document.getElementById('upIcon_lanmu');
@@ -30,7 +30,7 @@ var toggled = false;
   };
   controler.onclick = menuslide;
   upIcon_lanmu.onclick = menuslide;
-};*/
+};
 
 $(function(){
      // 菜单
