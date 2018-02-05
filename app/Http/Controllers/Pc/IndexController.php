@@ -222,10 +222,10 @@ class IndexController extends Controller
         $clickArr = Article::getArcRead($id);
 
         //相关视频
-        $relevant = Article::getArcRelevant($article['catid'], $id, 6);
+        $relevant = Article::getArcRelevant($article['catid'], $id, 8);
 
         //热门视频
-        $hotVideo = Article::getArcList($article['catid'], 1, 4, 'click');
+        //$hotVideo = Article::getArcList($article['catid'], 1, 4, 'click');
 
         $data = array(
             'title' => $article['title'] . '_' . config('app.name'),
@@ -233,7 +233,7 @@ class IndexController extends Controller
             'description' => $article['description'],
             'article' => $article,
             'relevant' => $relevant,
-            'hotVideo' => $hotVideo,
+            //'hotVideo' => $hotVideo,
             'mURL' => self::$mUrl,
             'click' => $clickArr['click'],
              'id'=>$id
