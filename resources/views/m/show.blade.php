@@ -51,6 +51,35 @@
 </div>
 
 <!--WAP版-->
+<style type="text/css">
+    #SOHUCS #SOHU_MAIN .module-mobile-cmt-list .list-wrapper-wap .list-container-wap .list-item-wap .list-content-wrapper-wap .list-content-wap{
+        font-size: 0.42rem;
+        color: #333;
+        margin-top: .25em;
+        line-height: 1.916666667em;
+        float: left;
+        width: 100%;
+        padding-right: .833333333em;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        word-wrap: break-word;
+        word-break: break-all;
+    }
+    #SOHUCS #SOHU_MAIN .module-mobile-cmt-list .list-wrapper-wap .list-container-wap .list-item-wap .list-content-wrapper-wap .list-content-info .list-nickname-wap {
+        float: left;
+        font-size: 0.42rem;
+        color: #4398ed;
+    }
+    #SOHUCS #SOHU_MAIN .module-mobile-cmt-list .list-wrapper-wap .list-container-wap .list-item-wap .list-content-wrapper-wap .list-content-info .list-cmt-time-wap {
+        float: right;
+        color: #d5d5d5;
+        font-size: 0.42rem;
+        margin: .166666667em .083333333em 0 0;
+    }
+    #SOHUCS #SOHU_MAIN .module-mobile-cmt-list .list-footer-wrapper-wap .up-to-cbox .up-to-cbox-text {
+        font-size: 0.42rem;
+    }
+</style>
 <div id="SOHUCS" sid="sohucs{{$id}}" ></div>
 <script id="changyan_mobile_js" charset="utf-8" type="text/javascript"
         src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=cyrHuPjAo&conf=prod_2b6e4633ad581f342ee4bb78f9a57081">
