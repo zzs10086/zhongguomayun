@@ -43,25 +43,9 @@
                             <a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a>
                         </div>
                     </div>
-                    <script>
-                        window._bd_share_config = {
-                            "common": {
-                                "bdSnsKey": {},
-                                "bdText": "",
-                                "bdMini": "2",
-                                "bdPic": "",
-                                "bdStyle": "0",
-                                "bdSize": "16"
-                            },
-                            "share": {},
-                            "selectShare": {
-                                "bdContainerClass": null,
-                                "bdSelectMiniList": ["qzone", "tsina", "tqq", "renren", "weixin"]
-                            }
-                        };
-                        with (document)
-                            0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
-                    </script>
+
+
+                   <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
                     <div class="bui-zan">
                     <span class="good">
                         <span id="praise_txt">143</span>
