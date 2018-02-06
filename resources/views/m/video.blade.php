@@ -89,7 +89,7 @@
             font-size: 0.42rem;
         }
         #SOHUCS #SOHU_MAIN .module-mobile-cmt-list .list-wrapper-wap .list-container-wap .list-build-wap .floor-item-wap .floor-content-wrapper-wap .floor-content-wap {
-            font-size: 0.42rem;
+            font-size: 0.35rem;
             color: #333;
             line-height: 1.833333333em;
             margin-top: .666666667em;
