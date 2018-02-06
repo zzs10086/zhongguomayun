@@ -274,4 +274,65 @@ class Article extends Model
         Util::setRedis($key, $data, -1);
 
     }
+
+    /**
+     * 文章点赞
+     * @param $id
+     * @return array|mixed
+     */
+    public static function getArcLike($id)
+    {
+
+        $key = "getArcLike:" . $id;
+
+        $data = Util::getRedis($key, true);
+
+        if (!$data) {
+
+            $where = [['id', $id]];
+
+            $res = Article::where($where)->first()->toArray();
+
+            $data = array(
+                'good' => isset($res['good']) ? $res['good'] : 0,
+                'bad' => isset($res['bad']) ? $res['bad'] : 0,
+                'count' => 0
+            );
+
+            Util::setRedis($key, $data, -1);
+        }
+
+        return $data;
+    }
+
+    /**
+     * 设置文章喜欢
+     * @param $id
+     * @param string $field
+     */
+    public static function setArcLike($id, $field = 'good')
+    {
+
+        $key = "getArcLike:" . $id;
+
+        $data = self::getArcLike($id);
+
+        $data[$field]++;
+
+        //count 超过10次就提交数据库
+        if ($data['count'] >= 10) {
+
+            Article::where([['id', $id]])->update(['good' => $data['good'], 'bad' => $data['bad']]);
+
+            $data['count'] = 0;
+
+        } else {
+
+            $data['count']++;
+        }
+
+
+        Util::setRedis($key, $data, -1);
+
+    }
 }

@@ -37,7 +37,7 @@
                 <div class="share_video">
                     <div class="snsbox clearfix">
                         <span class="snsbox-share">分享到：</span>
-                        <div  data-bd-bind="1431498273755" class="share_to bdsharebuttonbox bdshare-button-style0-16" >
+                        <div class="share_to bdsharebuttonbox bdshare-button-style0-16" >
                             <a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a>
                             <a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin"></a>
                             <a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a>
@@ -46,14 +46,14 @@
 
 
                    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
-                    <div class="bui-zan">
+                    <div class="bui-zan" data-aid="{{$id}}">
                     <span class="good">
-                        <span id="praise_txt">143</span>
+                        <span id="praise_txt">{{$goodAndBad['good']}}</span>
                         <i></i>
                         <span id="add_num"><em>+1</em></span>
                     </span>
                     <span class="bad">
-                        <span id="belittle_txt">43</span>
+                        <span id="belittle_txt">{{$goodAndBad['bad']}}</span>
                         <i></i>
                     </span>
                     <span class="collect" onclick="addFavorite(this);">
@@ -72,7 +72,7 @@
                             <span class="name">中国马云</span>
                         </div>
                         <div class="boNum fr">
-                            <em>{{$article['click']}}</em>次播放
+                            <em>{{$click}}</em>次播放
                         </div>
                     </div>
                 </div>
@@ -125,4 +125,7 @@
 
     </div>
 </div>
+<script src="<?php echo config('app.static_url');?>/pc/js/jquery.cookie.js"></script>
+<script src="<?php echo config('app.static_url');?>/pc/js/global.js"></script>
+<script src="<?php echo config('app.static_url');?>/pc/js/video_y.js"></script>
 @stop

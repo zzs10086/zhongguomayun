@@ -227,6 +227,9 @@ class IndexController extends Controller
         //热门视频
         //$hotVideo = Article::getArcList($article['catid'], 1, 4, 'click');
 
+        //点赞和踩
+        $goodAndBad = Article::getArcLike($id);
+
         $data = array(
             'title' => $article['title'] . '_' . config('app.name'),
             'keyword' =>$article['keywords'],
@@ -236,7 +239,8 @@ class IndexController extends Controller
             //'hotVideo' => $hotVideo,
             'mURL' => self::$mUrl,
             'click' => $clickArr['click'],
-             'id'=>$id
+            'id'=>$id,
+            'goodAndBad'=>$goodAndBad,
         );
 
         return view('pc.video',$data);
