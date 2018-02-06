@@ -1,7 +1,7 @@
 $(function(){
     var id = $('.bui-zan').data('aid');
-    var cookid_like_key = 'video_like_'+id;
-    var cookid_bad_key = 'video_bad_'+id;
+    var cookid_like_key = 'arc_like_'+id;
+    var cookid_bad_key = 'arc_bad_'+id;
     //点赞
     if($.cookie(cookid_like_key)){
         $("#praise_txt").addClass("hover");
