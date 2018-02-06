@@ -130,4 +130,9 @@ a{ text-decoration: none; color: #333}
 .chanyanTit{margin:0 0.4rem;height:1.2rem;line-height: 1.2rem;font-size:0.46rem;border-bottom:#ddd 1px solid;color: #1576BD;}
 .chanyanList{font-size: 0.42rem;}
 
+/*title*/
+.shareTit{margin:0.2rem 0.2rem;height:0.4rem;line-height: 0.4rem;font-size:0.26rem;color: #1576BD;}
+.clickTit{ float: right;}
+
+
 

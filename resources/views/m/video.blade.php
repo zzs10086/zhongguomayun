@@ -19,6 +19,14 @@
         });*/
     </script>
 </div>
+<div class="shareTit">
+
+    <!-- JiaThis Button BEGIN -->
+    <div class="jiathis_style_m"></div>
+    <script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_m.js" charset="utf-8"></script>
+    <!-- JiaThis Button END -->
+    <div class="clickTit">播放次数({{$article['click']}})</div>
+</div>
 <!-- end -->
 <!-- 推荐阅读 -->
 <div class="newTit">
