@@ -34,7 +34,7 @@ class IndexController extends Controller
         $foucsNews = Article::getFlagArc('f', 6);
 
         //马云语录
-        $mayunNews = Article::getArcList(1, 1, 8);
+        $mayunNews = Article::getArcList(0, 1, 8);
 
         //热度排行
         $hotNews = Article::getArcList(0, 1, 9, 'click');

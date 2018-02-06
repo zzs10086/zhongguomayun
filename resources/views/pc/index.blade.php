@@ -53,7 +53,7 @@
     </div>
 
 
-    <div class="title-a"><h2>马云动态</h2></div>
+    <div class="title-a"><h2>最新资讯</h2></div>
     <ul class="article-list">
         @foreach($mayunNews as $k=>$v)
         <li>
