@@ -62,7 +62,7 @@
     <!--WAP版-->
     <style type="text/css">
         #SOHUCS #SOHU_MAIN .module-mobile-cmt-list .list-wrapper-wap .list-container-wap .list-item-wap .list-content-wrapper-wap .list-content-wap{
-            font-size: 0.3rem;
+            font-size: 0.4rem;
             color: #333;
             margin-top: .25em;
             line-height: 1.916666667em;
