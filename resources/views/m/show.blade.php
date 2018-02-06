@@ -79,6 +79,14 @@
     #SOHUCS #SOHU_MAIN .module-mobile-cmt-list .list-footer-wrapper-wap .up-to-cbox .up-to-cbox-text {
         font-size: 0.42rem;
     }
+    #SOHUCS #SOHU_MAIN .module-mobile-cmt-list .list-wrapper-wap .list-container-wap .list-build-wap .floor-item-wap .floor-content-wrapper-wap .floor-content-wap {
+        font-size: 0.42rem;
+        color: #333;
+        line-height: 1.833333333em;
+        margin-top: .666666667em;
+        word-wrap: break-word;
+        word-break: break-all;
+    }
 </style>
 <div id="SOHUCS" sid="sohucs{{$id}}" ></div>
 <script id="changyan_mobile_js" charset="utf-8" type="text/javascript"
