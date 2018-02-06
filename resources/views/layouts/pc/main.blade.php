@@ -6,10 +6,9 @@
     <meta name="description" content="{{$description}}" />
     <link rel="shortcut icon" href="<?php echo config('app.static_url');?>/pc/images/favicon.ico" type="image/x-icon" />
     <link href="<?php echo config('app.static_url');?>/pc/css/style.css" rel="stylesheet" media="screen" type="text/css" />
-    <script type="text/javascript" src="<?php echo config('app.static_url');?>/pc/js/jquery-1.7.2.min.js"></script>
-    <meta name="mobile-agent" content="format=html5;url={{$mURL}}">
-
     @yield('css')
+    <meta name="mobile-agent" content="format=html5;url={{$mURL}}">
+    <script type="text/javascript" src="<?php echo config('app.static_url');?>/pc/js/jquery-1.7.2.min.js"></script>
 </head>
 <body>
 <!--toper-->
