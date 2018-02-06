@@ -60,7 +60,7 @@
         <span>热门评论</span>
     </div>
     <!--WAP版-->
-    <style type="text/css">
+   {{-- <style type="text/css">
         #SOHUCS #SOHU_MAIN .module-mobile-cmt-list .list-wrapper-wap .list-container-wap .list-item-wap .list-content-wrapper-wap .list-content-wap{
             font-size: 0.4rem;
             color: #333;
@@ -88,7 +88,7 @@
         #SOHUCS #SOHU_MAIN .module-mobile-cmt-list .list-footer-wrapper-wap .up-to-cbox .up-to-cbox-text {
             font-size: 0.4rem;
         }
-    </style>
+    </style>--}}
     <div id="SOHUCS" sid="sohucs{{$id}}" ></div>
     <script id="changyan_mobile_js" charset="utf-8" type="text/javascript"
             src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=cyrHuPjAo&conf=prod_2b6e4633ad581f342ee4bb78f9a57081">

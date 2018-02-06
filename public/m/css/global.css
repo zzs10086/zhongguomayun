@@ -1,6 +1,6 @@
 html,body, ul, p, h1, h2, h3, h4, h5 { margin: 0; padding: 0; }
 html { font-family: "微软雅黑", Helvetica, STHeiTi, Arial, sans-serif;}
-body { text-align: left; }
+body { text-align: left;font-size: 0.42rem;}
 body { background: #fff; }
 li { list-style: none; }
 img { border: none; }
