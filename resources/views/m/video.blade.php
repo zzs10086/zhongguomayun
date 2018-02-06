@@ -74,6 +74,20 @@
             word-wrap: break-word;
             word-break: break-all;
         }
+        #SOHUCS #SOHU_MAIN .module-mobile-cmt-list .list-wrapper-wap .list-container-wap .list-item-wap .list-content-wrapper-wap .list-content-info .list-nickname-wap {
+            float: left;
+            font-size: 0.4rem;
+            color: #4398ed;
+        }
+        #SOHUCS #SOHU_MAIN .module-mobile-cmt-list .list-wrapper-wap .list-container-wap .list-item-wap .list-content-wrapper-wap .list-content-info .list-cmt-time-wap {
+            float: right;
+            color: #d5d5d5;
+            font-size: 0.4rem;
+            margin: .166666667em .083333333em 0 0;
+        }
+        #SOHUCS #SOHU_MAIN .module-mobile-cmt-list .list-footer-wrapper-wap .up-to-cbox .up-to-cbox-text {
+            font-size: 0.4rem;
+        }
     </style>
     <div id="SOHUCS" sid="sohucs{{$id}}" ></div>
     <script id="changyan_mobile_js" charset="utf-8" type="text/javascript"
