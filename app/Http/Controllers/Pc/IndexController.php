@@ -231,7 +231,7 @@ class IndexController extends Controller
         $goodAndBad = Article::getArcLike($id);
 
         $data = array(
-            'title' => $article['title'] . '_' . config('app.name'),
+            'title' => $article['title'],
             'keyword' =>$article['keywords'],
             'description' => $article['description'],
             'article' => $article,
