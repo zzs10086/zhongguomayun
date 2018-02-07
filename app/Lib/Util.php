@@ -425,4 +425,14 @@ class Util
         return $str;
     }
 
+    /**
+     * 判断是否是微信小程序
+     * @return bool
+     */
+    public static function isWX()
+    {
+        return isset($_GET['type']) && $_GET['type'] == 'json';
+        //return strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') !== false && (isset($_GET['type']) && $_GET['type'] == 'json');
+    }
+
 }

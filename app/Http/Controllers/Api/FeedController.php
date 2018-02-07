@@ -8,7 +8,7 @@ use App\Model\Article;
 use Illuminate\Support\Facades\Input;
 use App\Lib\Util;
 
-class FeedController extends Controller
+class FeedController extends BaseController
 {
     //
     public function index(){
