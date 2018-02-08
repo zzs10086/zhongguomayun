@@ -58,10 +58,11 @@ class FeedController extends BaseController
 
         if(!$data){
 
-            $data['created_at'] = date('Y-m-d', strtotime($data['created_at']));
             Util::output($data, -1, '暂无数据', $_callback);
         }
 
+        $data['created_at'] = date('Y-m-d', strtotime($data['created_at']));
+        
         Util::output($data, 0, 'ok', $_callback);
 
     }
