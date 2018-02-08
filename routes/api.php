@@ -18,4 +18,5 @@ use Illuminate\Http\Request;
 });*/
 Route::get('/feed', 'Api\FeedController@index');
 Route::get('/detail', 'Api\FeedController@detail');
+Route::get('/foucs', 'Api\FeedController@foucs');
 Route::post('/agree', 'Api\IndexController@agree');

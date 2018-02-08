@@ -49,6 +49,20 @@ class FeedController extends BaseController
 
     }
 
+    public function foucs(){
+
+        $_callback = Input::get('_callback');
+
+        $data = Article::getFlagArc('f', 6);
+
+        if(!$data){
+
+            Util::output($data, -1, '暂无数据', $_callback);
+        }
+
+        Util::output($data, 0, 'ok', $_callback);
+    }
+
     public function detail(){
 
         $id = Input::get('id');
@@ -62,7 +76,7 @@ class FeedController extends BaseController
         }
 
         $data['created_at'] = date('Y-m-d', strtotime($data['created_at']));
-        
+
         Util::output($data, 0, 'ok', $_callback);
 
     }
