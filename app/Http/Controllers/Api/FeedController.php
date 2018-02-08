@@ -35,6 +35,7 @@ class FeedController extends BaseController
                     'created_at' => date('Y-m-d', strtotime($v['created_at'])),
                     'catid' => $v['catid'],
                     'is_img'=> $v['is_img'],
+                    'video_url'=> $v['video_url'],
                 );
 
             }
