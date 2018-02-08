@@ -17,4 +17,5 @@ use Illuminate\Http\Request;
     return $request->user();
 });*/
 Route::get('/feed', 'Api\FeedController@index');
+Route::get('/detail', 'Api\FeedController@detail');
 Route::post('/agree', 'Api\IndexController@agree');
