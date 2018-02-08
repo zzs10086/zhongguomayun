@@ -60,6 +60,10 @@ class FeedController extends BaseController
             Util::output($data, -1, '暂无数据', $_callback);
         }
 
+        foreach ($data as &$value){
+
+            $value['imgurl'] = config('app.upload_url') . $value['thumb'];
+        }
         Util::output($data, 0, 'ok', $_callback);
     }
 
