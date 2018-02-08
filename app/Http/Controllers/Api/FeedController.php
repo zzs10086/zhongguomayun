@@ -46,4 +46,20 @@ class FeedController extends BaseController
         Util::output($data, 0, 'ok', $_callback);
 
     }
+
+    public function detail(){
+
+        $id = Input::get('id');
+        $_callback = Input::get('_callback');
+
+        $data = Article::getArcInfo($id);
+
+        if(!$data){
+
+            Util::output($data, -1, '暂无数据', $_callback);
+        }
+
+        Util::output($data, 0, 'ok', $_callback);
+
+    }
 }
