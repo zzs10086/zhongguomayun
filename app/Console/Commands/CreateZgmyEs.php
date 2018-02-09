@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use Elasticsearch;
+use Elasticsearch\Common\Exceptions\ElasticsearchException;
 
 class CreateZgmyEs extends Command
 {
@@ -120,7 +121,7 @@ class CreateZgmyEs extends Command
 
             $this->client->indices()->create($mapParam);
 
-        }catch (\Exception $e){
+        }catch (ElasticsearchException $e){
 
             echo '<pre>';print_r($e);
             
