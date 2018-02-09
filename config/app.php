@@ -240,7 +240,7 @@ return [
     'ali_access_key_secret' => env('ACCESS_KEY_SECRET', ''),
     'oss_bucket' => env('OSS_BUCKET', ''),
 
-    'es_host'=>env('ES_HOST', 'http://127.0.0.1'),
+    'es_host'=>env('ES_HOST', 'http://127.0.0.1:9200'),
     'es_index'=>env('ES_INDEX', 'zgmy'),
     'es_type'=>env('ES_TYPE', 'mayun'),
 ];
