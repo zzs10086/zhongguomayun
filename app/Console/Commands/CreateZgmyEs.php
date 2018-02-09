@@ -122,7 +122,7 @@ class CreateZgmyEs extends Command
 
         }catch (\Exception $e){
 
-            echo '<pre>';pirnt_r($e);
+            echo '<pre>';print_r($e);
             
         }
 
