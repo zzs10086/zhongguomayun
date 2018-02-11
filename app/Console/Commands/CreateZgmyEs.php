@@ -88,7 +88,7 @@ class CreateZgmyEs extends Command
                                 'type' => 'string',
                                 'analyzer' => 'ik_smart'
                             ),
-                            'keywords'=>array(
+                            'keyword'=>array(
                                 'type' => 'string',
                                 'analyzer' => 'ik_smart'
                             ),
