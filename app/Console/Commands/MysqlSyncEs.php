@@ -25,6 +25,12 @@ class MysqlSyncEs extends Command
 
     private $client = null;
 
+    private $esHost = '';
+
+    private $esIndex = '';
+
+    private $esType ='';
+
     /**
      * Create a new command instance.
      *
@@ -32,6 +38,12 @@ class MysqlSyncEs extends Command
      */
     public function __construct()
     {
+        $this->esHost = config('app.es_host');
+
+        $this->esIndex = config('app.es_index');
+
+        $this->esType = config('app.es_type');
+
         $this ->client = Elasticsearch\ClientBuilder::create()
              ->setRetries(2)
              ->build();
@@ -75,8 +87,8 @@ class MysqlSyncEs extends Command
                 $time = time();
                 $params['body'][] = [
                      'index' => [
-                          '_index' => $this->index,
-                          '_type' => $this->type,
+                          '_index' => $this->esIndex,
+                          '_type' => $this->esType,
                           '_id' => md5($time.$v['id']),
                      ],
                 ];
