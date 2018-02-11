@@ -267,6 +267,7 @@ class IndexController extends Controller
              'per_page' => $limit,       // 每页数量
              'total_page' => round($count / $limit),      // 总页数
              'path_deep' => 3,
+             'path_type' => 1,
              'ul_class' =>'page over_hidden',
              'current_class' => 'thisclass'
         ]);
