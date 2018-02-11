@@ -315,6 +315,21 @@ a{color:#666; text-decoration:none;}
     color: #fff;
 }
 
+.index-tag{
+
+    background-color: #ffffff;
+    padding: 10px 0px;
+    height: 200px;
+}
+.index-tag .tag{
+    display: block;
+    float: left;
+    padding: 5px 10px;
+    border: 1px solid #EEEEEE;
+    height: 25px;
+    line-height: 25px;
+    margin: 5px 10px;
+}
 .idx-topic img{
     width: 335px;
     height: 150px;

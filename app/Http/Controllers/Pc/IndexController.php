@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Pc;
 
 use App\Lib\Util;
 use App\Model\Article;
+use App\Model\Tag;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Lib\Paginate;
@@ -42,6 +43,9 @@ class IndexController extends Controller
 
         //视频
         $videoNews = Article::getArcList(2, 1, 6);
+        
+        //tag
+        $hotTag =Tag::getTag();
 
         $data = array(
             'title' => '【马云】马云资料大全_马云演讲视频整理_马云的最新消息、动态',
@@ -51,6 +55,7 @@ class IndexController extends Controller
             'mayunNews' => $mayunNews,
             'hotNews' => $hotNews,
             'videoNews' => $videoNews,
+            'hotTag' => $hotTag,
             'mURL' => self::$mUrl,
         );
 
@@ -90,6 +95,9 @@ class IndexController extends Controller
             'current_class' => 'thisclass'
         ]);
 
+        //tag
+        $hotTag =Tag::getTag();
+
         $data = array(
             'title' => $category['seo_title'],
             'keyword' =>$category['seo_keywords'],
@@ -98,6 +106,7 @@ class IndexController extends Controller
             'paginate' => $paginate,
             'category_id'=>$category_id,
             'current' =>$category['category_name'],
+            'hotTag' => $hotTag,
             'mURL' => self::$mUrl,
         );
 
@@ -138,6 +147,9 @@ class IndexController extends Controller
             'current_class' => 'thisclass'
         ]);
 
+        //tag
+        $hotTag =Tag::getTag();
+
         $data = array(
             'title' => $category['seo_title'],
             'keyword' =>$category['seo_keywords'],
@@ -146,6 +158,7 @@ class IndexController extends Controller
             'paginate' => $paginate,
             'category_id'=>$category_id,
             'current' =>$category['category_name'],
+             'hotTag' => $hotTag,
             'mURL' => self::$mUrl,
         );
 
@@ -193,6 +206,9 @@ class IndexController extends Controller
             'current_class' => 'thisclass'
         ]);
 
+        //tag
+        $hotTag =Tag::getTag();
+
         $data = array(
             'title' => $article['title'],
             'keyword' =>$article['keywords'],
@@ -204,6 +220,7 @@ class IndexController extends Controller
             'relevant' => $relevant,
             'mURL' => self::$mUrl,
             'click' => $clickArr['click'],
+            'hotTag' => $hotTag,
             'id'=>$id
 
         );
@@ -231,6 +248,9 @@ class IndexController extends Controller
         //点赞和踩
         $goodAndBad = Article::getArcLike($id);
 
+        //tag
+        $hotTag =Tag::getTag();
+
         $data = array(
             'title' => $article['title'],
             'keyword' =>$article['keywords'],
@@ -241,6 +261,7 @@ class IndexController extends Controller
             'mURL' => self::$mUrl,
             'click' => $clickArr['click'],
             'id'=>$id,
+             'hotTag' => $hotTag,
             'goodAndBad'=>$goodAndBad,
         );
 
@@ -259,7 +280,7 @@ class IndexController extends Controller
         $result = json_decode(Util::getCurl($apiUrl),true);
 
         $count = $result['data']['total'];
-        $list = $result['data']['item'];
+        $list = $count > 0 ? $result['data']['item'] : [];
 
         $paginate = Pager::_page([
              'current_page' => $page,    // 当前页
@@ -271,6 +292,9 @@ class IndexController extends Controller
              'current_class' => 'thisclass'
         ]);
 
+        //tag
+        $hotTag =Tag::getTag();
+
         $data = array(
              'title' => '搜索结果',
              'keyword' =>'搜索',
@@ -278,6 +302,7 @@ class IndexController extends Controller
              'list'=>$list,
              'paginate' => $paginate,
              'current' =>'搜索结果：'.$keywords,
+             'hotTag' => $hotTag,
              'mURL' => self::$mUrl,
         );
 

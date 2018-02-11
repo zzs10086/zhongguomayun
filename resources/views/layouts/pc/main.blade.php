@@ -107,7 +107,15 @@
             </ul>
 
         </div>
+        <div class="right-block mt10">
+            <div class="title-a"><h2>热门标签</h2></div>
+            <div class="index-tag">
+                @foreach($hotTag as $k=>$v)
+                    <a href="<?php echo config('app.url');?>/search/{{$v['tag']}}" class="tag">{{$v['tag']}}</a>
+                @endforeach
+            </div>
 
+        </div>
         <div class="right-block mt20">
             <div class="idx-topic"><img src="<?php echo config('app.static_url');?>/pc/images/topic.jpg" alt=""/></div>
         </div>

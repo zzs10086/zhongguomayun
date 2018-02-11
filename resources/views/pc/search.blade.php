@@ -2,6 +2,7 @@
 @extends('layouts.pc.main')
 @section('content')
     <div class="title-a"><h3>{{$current}}</h3></div>
+    @if($list)
     <ul class="article-list">
         @foreach($list as $k=>$v)
             <li>
@@ -24,6 +25,10 @@
             {!! $paginate !!}
         </div>
     </div>
+    @else
+            <div class="search-nothing">暂无数据</div>
+    @endif
+
 
     <!--con END-->
 @stop
