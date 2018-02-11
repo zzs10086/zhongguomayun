@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Elasticsearch;
 use Illuminate\Support\Facades\Input;
+use App\Lib\Util;
 
 class EsController extends Controller
 {
@@ -20,7 +21,7 @@ class EsController extends Controller
 
      public function __construct()
      {
-          
+
           $this->esHost = config('app.es_host');
 
           $this->esIndex = config('app.es_index');
