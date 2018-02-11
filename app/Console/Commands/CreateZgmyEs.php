@@ -44,14 +44,17 @@ class CreateZgmyEs extends Command
 
         $this->esType = config('app.es_type');
 
-        $hosts = array(
+       /* $hosts = array(
             $this->esHost
         );
 
         $this ->client = Elasticsearch\ClientBuilder::create()
                         ->setHosts([$hosts])
                         ->setRetries(2)
-                        ->build();
+                        ->build();*/
+        $this ->client = Elasticsearch\ClientBuilder::create()
+            ->setRetries(2)
+            ->build();
         
         parent::__construct();
     }
