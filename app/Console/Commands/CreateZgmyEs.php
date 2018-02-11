@@ -82,19 +82,19 @@ class CreateZgmyEs extends Command
                             ),
                             'title'=>array(
                                 'type' => 'string',
-                                'analyzer' => 'ik_smart'
+                                'analyzer' => 'ik_max_word'
                             ),
                             'description'=>array(
                                 'type' => 'string',
-                                'analyzer' => 'ik_smart'
+                                'analyzer' => 'ik_max_word'
                             ),
-                            'keyword'=>array(
+                            'keywords'=>array(
                                 'type' => 'string',
-                                'analyzer' => 'ik_smart'
+                                'analyzer' => 'ik_max_word'
                             ),
                             'thumb'=>array(
                                 'type' => 'string',
-                                'analyzer' => 'ik_smart'
+                                'analyzer' => 'ik_max_word'
                             ),
                             'is_img'=>array(
                                 'type' => 'integer',
@@ -113,7 +113,7 @@ class CreateZgmyEs extends Command
                             ),
                             'content' => array(
                                 'type' => 'string',
-                                'analyzer'=> 'ik_smart'
+                                'analyzer'=> 'ik_max_word'
                             )
                         )
                     ]
