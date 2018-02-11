@@ -337,7 +337,7 @@ class Article extends Model
     }
 
     /**
-     * 获取子分类id
+     * 同步Es数据
      * @param $cid
      * @return mixed
      */

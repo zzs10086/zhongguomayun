@@ -114,6 +114,9 @@ class CreateZgmyEs extends Command
                             'status'=>array(
                                 'type' => 'integer',
                             ),
+                            'addtime'=>array(
+                                  'type' => 'integer',
+                             ),
                             'content' => array(
                                 'type' => 'text',
                                 'analyzer'=> 'ik_smart'

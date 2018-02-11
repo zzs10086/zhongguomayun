@@ -15,4 +15,9 @@ class SyncEsLastId extends Model
 
         return SyncEsLastId::find(1);
     }
+
+    public static function updateSyncEsLastid($lastid){
+
+        SyncEsLastId::where('id', 1)->update(['last_id' => $lastid]);
+    }
 }
