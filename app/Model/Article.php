@@ -121,7 +121,7 @@ class Article extends Model
 
             $offset = ($page - 1) * $limit;
 
-            $where = $category_id == 0 ?  [['status', 0]] : [['status', 0], ['catid', $category_id]];
+            $where = $category_id == 0 ?  [['status', 0], ['catid', '<>', 3]] : [['status', 0], ['catid', $category_id]];
 
             $query = Article::where($where);
 
