@@ -190,6 +190,7 @@ class EsController extends Controller
                          'created_at'=>$value['_source']['created_at'],
                          'is_img'=>$value['_source']['is_img'],
                          'thumb'=>$value['_source']['thumb'],
+                         'click'=>$value['_source']['click'],
                     ];
                }
           }
