@@ -608,3 +608,10 @@ a{color:#666; text-decoration:none;}
     clear: both;
 
 }
+
+.search-nothing{
+    width: 825px;
+    background-color: #ffffff;
+    padding: 150px 0px;
+    height: 400px;
+}
