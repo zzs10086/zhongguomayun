@@ -130,7 +130,7 @@ class EsController extends Controller
                          '_score'=>[
                               'order'=>'desc',
                          ],
-                         'inputtime'=>[
+                         'created_at'=>[
                               'order'=>'desc',
                          ],
                     ],
