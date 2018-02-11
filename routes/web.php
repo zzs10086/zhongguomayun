@@ -18,6 +18,7 @@ Route::group(['domain' => config('app.domain'),'namespace' => 'Pc','prefix' => '
     Route::get('/duanzi/', 'IndexController@duanzi');
     Route::get('/yulu/{page}.html', 'IndexController@yulu');
     Route::get('/yulu', 'IndexController@yulu');
+    Route::get('/search/{keywords}', 'IndexController@search');
     Route::get('/search', 'IndexController@search');
     Route::get('/{category}', 'IndexController@category');
     Route::get('/{category}/{page}.html', 'IndexController@category');
