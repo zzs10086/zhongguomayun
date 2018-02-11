@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Lib\Util;
 use App\Model\Article;
 use App\Model\SyncEsLastId;
 use Illuminate\Console\Command;
@@ -71,7 +72,7 @@ class MysqlSyncEs extends Command
 
         $last_id = empty($last_id_arr) ? 0 : $last_id_arr['last_id'];
 
-        $limit = 50;
+        $limit = 30;
 
         while (1){
 
@@ -82,7 +83,6 @@ class MysqlSyncEs extends Command
             if(empty($list)) return false;
             //上次同步最后的id
             foreach ($list as $k=>$v){
-
                 $last_id = $v['id'];
                 $time = time();
                 $params['body'][] = [
@@ -105,7 +105,7 @@ class MysqlSyncEs extends Command
                      'click' =>(int)$v['click'],
                      'status' => (int)$v['status'],
                      'addtime' => (int)$time,
-                     'content' => $v['content'],
+                     'content' => $v['content']['content']
                 ];
 
                 if(fmod($i,$limit)==0)
@@ -113,7 +113,8 @@ class MysqlSyncEs extends Command
                     $responses = $this->client->bulk($params);
                     $params = ['body' => []];
                     unset($responses);
-                    sleep(2);
+                    Util::debug_log('Mysql同步Es中，最后的文章id：'.$last_id, 'synces');
+                    sleep(1);
                 }
                 $i++;
 
@@ -130,8 +131,9 @@ class MysqlSyncEs extends Command
             }
             //更新syncEsLastid
             SyncEsLastId::updateSyncEsLastid($last_id);
-            sleep(2);
+            sleep(1);
 
+            Util::debug_log('=======Mysql同步Es结束，最后的文章id：'.$last_id."=======", 'synces');
         }
     }
 }

@@ -341,12 +341,12 @@ class Article extends Model
      * @param $cid
      * @return mixed
      */
-    public static function getEsArcList($max_id = 0, $limit = 50){
+    public static function getEsArcList($max_id = 0, $limit = 30){
 
 
         $where = [['status', 0], ['id', '>', $max_id]];
 
-        $query = Article::where($where);
+        $query = Article::with('content')->where($where);
 
         $data = $query->limit($limit) ->get()->toArray();
 
