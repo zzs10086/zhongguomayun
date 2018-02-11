@@ -20,7 +20,7 @@ class EsController extends Controller
 
      public function __construct()
      {
-          echo 'es';exit;
+          
           $this->esHost = config('app.es_host');
 
           $this->esIndex = config('app.es_index');
