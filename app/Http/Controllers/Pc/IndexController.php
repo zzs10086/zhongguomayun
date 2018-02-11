@@ -251,12 +251,36 @@ class IndexController extends Controller
 
         $keywords = Input::get('q');
 
+        $limit = 10;
+
         $time =time();
         $token = md5($time.config('app.token_salt'));
-        echo $apiUrl = config('app.api_app_url')."/api/es/query?keywords=".$keywords."&page=".$page."&limit=10&time=".$time."&token=".$token;
+        $apiUrl = config('app.api_app_url')."/api/es/query?keywords=".$keywords."&page=".$page."&limit=".$limit."&time=".$time."&token=".$token;
         $result = json_decode(Util::getCurl($apiUrl),true);
-        echo '<pre>';
-        print_R($result);
+
+        $count = $result['data']['total'];
+        $list = $result['data']['item'];
+
+        $paginate = Pager::_page([
+             'current_page' => $page,    // 当前页
+             'per_page' => $limit,       // 每页数量
+             'total_page' => round($count / $limit),      // 总页数
+             'path_deep' => 3,
+             'ul_class' =>'page over_hidden',
+             'current_class' => 'thisclass'
+        ]);
+
+        $data = array(
+             'title' => '搜索结果',
+             'keyword' =>'搜索',
+             'description' => "搜索马云最新资讯",
+             'list'=>$list,
+             'paginate' => $paginate,
+             'current' =>'搜索结果：'.$keywords,
+             'mURL' => self::$mUrl,
+        );
+
+        return view('pc.search', $data);
 
     }
 }
