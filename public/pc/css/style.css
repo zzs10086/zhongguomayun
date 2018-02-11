@@ -104,6 +104,16 @@ a{color:#666; text-decoration:none;}
     color: #1482f0;
     border-bottom: 1px solid #1482f0;
 }
+.title-a h3,.title-a strong{
+    font-size:16px;
+    font-weight:bold;
+    padding-left:15px;
+    height:40px;
+    line-height:40px;
+    display:block;
+    color: #1482f0;
+    border-bottom: 1px solid #1482f0;
+}
 
 .newpic ul li .triangle {
     position: absolute;

@@ -247,9 +247,10 @@ class IndexController extends Controller
         return view('pc.video',$data);
     }
 
-    public function search($page = 1){
+    public function search(){
 
         $keywords = Input::get('q');
+        $page = Input::get('page', 1);
 
         $limit = 10;
 

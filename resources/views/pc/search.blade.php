@@ -1,7 +1,7 @@
 <?php use App\Lib\Util;?>
 @extends('layouts.pc.main')
 @section('content')
-    <div class="title-a"><h2>{{$current}}</h2></div>
+    <div class="title-a"><h3>{{$current}}</h3></div>
     <ul class="article-list">
         @foreach($list as $k=>$v)
             <li>
