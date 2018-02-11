@@ -44,9 +44,13 @@ class CreateZgmyEs extends Command
 
         $this->esType = config('app.es_type');
 
+        $hosts = array(
+            $this->esHost
+        );
+
         $this ->client = Elasticsearch\ClientBuilder::create()
-                        ->setHosts([$this->esHost])
-                        ->setRetries(1)
+                        ->setHosts([$hosts])
+                        ->setRetries(2)
                         ->build();
         
         parent::__construct();
@@ -120,7 +124,7 @@ class CreateZgmyEs extends Command
 
             $this->client->indices()->create($mapParam);
 
-        }catch (\Exception $e){
+        }catch (Elasticsearch\Common\Exceptions\TransportException $e){
 
             echo '<pre>';print_r($e);
             
