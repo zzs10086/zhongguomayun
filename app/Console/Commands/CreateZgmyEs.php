@@ -2,12 +2,15 @@
 
 namespace App\Console\Commands;
 
+use App\Lib\Util;
 use Illuminate\Console\Command;
 use Elasticsearch;
 
 class CreateZgmyEs extends Command
 {
     /**
+     *
+     * 生成es的 mapping
      * The name and signature of the console command.
      *
      * @var string
@@ -129,11 +132,11 @@ class CreateZgmyEs extends Command
 
         }catch (Elasticsearch\Common\Exceptions\TransportException $e){
 
-            echo '<pre>';print_r($e);
+            Util::debug_log($e, 'createEsMapping');
             
         }
 
-        echo 'success';
+        Util::debug_log("createEsMapping success", 'createEsMapping');
 
 
     }

@@ -335,4 +335,22 @@ class Article extends Model
         Util::setRedis($key, $data, -1);
 
     }
+
+    /**
+     * 获取子分类id
+     * @param $cid
+     * @return mixed
+     */
+    public static function getEsArcList($max_id = 0, $limit = 50){
+
+
+        $where = [['status', 0], ['id', '>', $max_id]];
+
+        $query = Article::where($where);
+
+        $data = $query->limit($limit) ->get()->toArray();
+
+        return $data;
+
+    }
 }
