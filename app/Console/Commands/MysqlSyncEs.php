@@ -100,7 +100,7 @@ class MysqlSyncEs extends Command
                      'keywords' => $v['keywords'],
                      'thumb' => $v['thumb'],
                      'is_img' => (int)$v['is_img'],
-                     'created_at' =>$v['created_at'],                    
+                     'created_at' =>date('Y-m-d', strtotime($v['created_at'])),
                      'catid' =>(int)$v['catid'],
                      'click' =>(int)$v['click'],
                      'status' => (int)$v['status'],
