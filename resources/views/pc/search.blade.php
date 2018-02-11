@@ -26,7 +26,9 @@
         </div>
     </div>
     @else
-            <div class="search-nothing">暂无数据</div>
+            <div class="search-nothing">
+                <div class="s-nothing">暂无数据</div>
+            </div>
     @endif
 
 

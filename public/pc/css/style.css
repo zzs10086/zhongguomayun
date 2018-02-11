@@ -615,3 +615,8 @@ a{color:#666; text-decoration:none;}
     padding: 150px 0px;
     height: 400px;
 }
+.s-nothing{
+    width: 200px;
+    margin: 10px auto;
+    font-size: 20px;
+}
