@@ -243,4 +243,8 @@ return [
     'es_host'=>env('ES_HOST', '127.0.0.1:9200'),
     'es_index'=>env('ES_INDEX', 'zgmy'),
     'es_type'=>env('ES_TYPE', 'mayun'),
+
+    'token_salt'=>env('TOKEN_SALT', 'mayunjiushge'),//盐值
+
+
 ];

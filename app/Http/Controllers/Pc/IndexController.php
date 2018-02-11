@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Lib\Paginate;
 use App\Lib\Pager;
 use App\Model\Category;
+use Illuminate\Support\Facades\Input;
 
 class IndexController extends Controller
 {
@@ -244,5 +245,18 @@ class IndexController extends Controller
         );
 
         return view('pc.video',$data);
+    }
+
+    public function search($page = 1){
+
+        $keywords = Input::get('q');
+
+        $time =time();
+        $token = md5($time.config('app.token_salt'));
+        echo $apiUrl = config('app.api_app_url')."/api/es/query?keywords=".$keywords."&page=".$page."&limit=10&time=".$time."&token=".$token;
+        $result = json_decode(Util::getCurl($apiUrl),true);
+        echo '<pre>';
+        print_R($result);
+
     }
 }

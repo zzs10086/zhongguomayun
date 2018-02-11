@@ -22,6 +22,32 @@ class EsController extends Controller
      public function __construct()
      {
 
+          $time = Input::get('time');
+          $token = Input::get('token');
+
+          $error = [
+               'data' =>[],
+               'msg' =>'',
+               'status' =>1,
+          ];
+          //判断验证
+          if(empty($time) || empty($token)){
+               $error['status'] =0;
+               $error['msg'] ='缺少验证';
+          }
+          elseif(time()-600>$time){
+               $error['status'] =0;
+               $error['msg'] ='请求超时';
+          }elseif($token!=md5($time.config('app.token_salt'))){
+               $error['status'] =0;
+               $error['msg'] ='token错误';
+          }
+          //非法请求
+          if($error['status'] ==0 ){
+               Util::output([], -1, $error['msg']);
+          }
+
+
           $this->esHost = config('app.es_host');
 
           $this->esIndex = config('app.es_index');
@@ -34,6 +60,9 @@ class EsController extends Controller
      }
 
 
+     /**
+      * es查询接口
+      */
      public function query(){
 
           $keywords = Input::get('keywords');
@@ -41,23 +70,30 @@ class EsController extends Controller
           $page = Input::get('page', 1);
           $_callback = Input::get('_callback');
 
-          $offset = ($page-1)*$limit;
+          $key = 'search:'.$keywords.":".$page.":".$limit;
+          $data = Util::getRedis($key, true);
 
-          if(!$keywords){
-               $data = [];
-               Util::output($data, -1, '参数为空', $_callback);
+          if (!$data) {
+
+               $offset = ($page-1)*$limit;
+               if(!$keywords){
+                    Util::output($data, -1, '参数为空', $_callback);
+               }
+               $param = [
+                    'keywords'=>$keywords,
+                    'offset'=>$offset,
+                    'limit'=>$limit
+               ];
+
+               $data = $this->queryEs($param);
+
+               Util::setRedis($key, $data);
+
           }
-          $param = [
-               'keywords'=>$keywords,
-               'offset'=>$offset,
-               'limit'=>$limit
-          ];
 
-          $data = $this->queryEs($param);
+         // Util::debug_log($data, 'esapi');
 
-          Util::debug_log($data, 'esapi');
-
-          Util::output($data, 0, 'ok', $_callback);
+          Util::output($data, 0, 'success', $_callback);
      }
 
      /**
