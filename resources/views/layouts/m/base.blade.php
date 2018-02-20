@@ -14,6 +14,16 @@
     <script type="text/javascript" src="<?php echo config('app.static_url');?>/m/js/global.js"></script>
     <link rel="shortcut icon" href="<?php echo config('app.static_url');?>/m/images/favicon.ico" type="image/x-icon" />
     @yield('css')
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?014ccbedd6ce3a45cf207e47d60820a5";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
 </head>
 <body>
 <div class="outer">
