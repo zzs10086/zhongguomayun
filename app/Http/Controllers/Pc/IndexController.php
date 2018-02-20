@@ -141,7 +141,7 @@ class IndexController extends Controller
         $paginate = Pager::_page([
             'current_page' => $page,    // 当前页
             'per_page' => $limit,       // 每页数量
-            'total_page' => $count / $limit,      // 总页数
+            'total_page' => round($count / $limit),       // 总页数
             'path_deep' => 3,
             'ul_class' =>'page over_hidden',
             'current_class' => 'thisclass'
