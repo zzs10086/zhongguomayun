@@ -9,6 +9,15 @@
     @yield('css')
     <meta name="mobile-agent" content="format=html5;url={{$mURL}}">
     <script type="text/javascript" src="<?php echo config('app.static_url');?>/pc/js/jquery-1.7.2.min.js"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?06227904dbbec6c3cc72a920671caff3";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
 </head>
 <body>
 <!--toper-->
