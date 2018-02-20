@@ -216,9 +216,10 @@ class Util
      */
     public static function createArcUrl($id, $time,$is_img = 1, $type = 'pc', $page = 1){
 
-        $siteUrl = $type == 'm' ? env('M_APP_URL') : env('APP_URL');
+        #$siteUrl = $type == 'm' ? env('M_APP_URL') : env('APP_URL');
+        $url = $type == 'm' ? config('app.m_url') : config('app.url');
 
-        $url = $siteUrl;
+        #$url = $siteUrl;
         //echo strtotime($time);exit;
         $urlTime = date('Ymd',strtotime($time));
         if($is_img == 2){
