@@ -571,6 +571,9 @@ a{color:#666; text-decoration:none;}
     width: 750px;
     padding-left: 10px;
 }
+.yulu-info .yulu-title{
+    height: 60px;
+}
 .yulu-info .yulu-title a{
     font-size: 18px;
     font-weight: bold;
@@ -579,12 +582,11 @@ a{color:#666; text-decoration:none;}
 .yulu-info .yulu-biao{
     width: 100%;
     padding: 15px 0px;
+    color: #999999;
 }
 .yulu-info .yulu-biao .p1{
     display: block;
     float: left;
-    color: #333333;
-
 }
 .yulu-info .yulu-biao .p2{
     display: block;

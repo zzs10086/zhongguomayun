@@ -8,8 +8,8 @@
                 <div class="yulu-info">
                     <div class="yulu-title"><a href="javascript:void(0);">{{$v['title']}}</a></div>
                     <div class="yulu-biao">
-                        <span class="p1">喜欢(320)</span>
-                        <span class="p2">评论(650)</span>
+                        <span class="p1">喜欢({{$v['click']}})</span>
+                        <span class="p2">评论({{$v['click']}})</span>
                     </div>
                 </div>
             </li>
