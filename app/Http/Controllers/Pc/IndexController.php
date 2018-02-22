@@ -183,7 +183,7 @@ class IndexController extends Controller
 
         $category_id = $category['id'];
 
-        $limit = 16;
+        $limit = 15;
 
         $list = Article::getArcList($category_id, $page, $limit);
 
