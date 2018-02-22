@@ -21,8 +21,9 @@
     </div>
 
 
+    <div style="height: 20px;"></div>
     <!-- 分页 -->
-    <div style="background-color: #fff; padding: 20px 0px;clear:both;">
+    <div style="background-color: #fff; padding: 20px 0px;">
         <div class="page_area clearfix">
             {!! $paginate !!}
         </div>
