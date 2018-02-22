@@ -114,11 +114,11 @@ class IndexController extends Controller
     }
 
     /**
-     * 语录
-     * @param string $cateName
-     * @param int $page
-     * @return mixed
-     */
+ * 语录
+ * @param string $cateName
+ * @param int $page
+ * @return mixed
+ */
     public function yulu( $page = 1){
 
         //获取分类
@@ -158,11 +158,62 @@ class IndexController extends Controller
             'paginate' => $paginate,
             'category_id'=>$category_id,
             'current' =>$category['category_name'],
-             'hotTag' => $hotTag,
+            'hotTag' => $hotTag,
             'mURL' => self::$mUrl,
         );
 
         return view('pc.yulu', $data);
+    }
+    /**
+     * 语录
+     * @param string $cateName
+     * @param int $page
+     * @return mixed
+     */
+    public function videoList( $page = 1){
+
+        //获取分类
+        $cateName='video';
+
+        $categoryEn = Category::getAllCategoryNameEn();
+
+        if(!in_array($cateName, $categoryEn)) abort(404);
+
+        $category = Category::getCategoryByPinyin($cateName );
+
+        $category_id = $category['id'];
+
+        $limit = 16;
+
+        $list = Article::getArcList($category_id, $page, $limit);
+
+        $count = Article::getArcCounts($category_id);
+
+        $paginate = Pager::_page([
+            'current_page' => $page,    // 当前页
+            'per_page' => $limit,       // 每页数量
+            'total_page' => round($count / $limit),       // 总页数
+            'path_deep' => 3,
+            'ul_class' =>'page over_hidden',
+            'current_class' => 'thisclass'
+        ]);
+
+        //tag
+        $hotTag =Tag::getTag();
+
+        $data = array(
+            'title' => $category['seo_title'],
+            'keyword' =>$category['seo_keywords'],
+            'description' => $category['seo_description'],
+            'list'=>$list,
+            'paginate' => $paginate,
+            'category_id'=>$category_id,
+            'current' =>$category['category_name'],
+            'hotTag' => $hotTag,
+            'mURL' => self::$mUrl,
+        );
+
+        return view('pc.video-list', $data);
     }
     /**
      * 文章详情

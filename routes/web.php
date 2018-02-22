@@ -20,11 +20,14 @@ Route::group(['domain' => config('app.domain'),'namespace' => 'Pc','prefix' => '
     Route::get('/yulu', 'IndexController@yulu');
     Route::get('/search/{keywords}', 'IndexController@search');
     Route::get('/search', 'IndexController@search');
+    Route::get('/video/{time}/{id}.html', 'IndexController@video');
+    Route::get('/video/{page}.html', 'IndexController@videoList');
+    Route::get('/video', 'IndexController@videoList');
     Route::get('/{category}', 'IndexController@category');
     Route::get('/{category}/{page}.html', 'IndexController@category');
     Route::get('/news/{time}/{id}_{page}.html', 'IndexController@show');
     Route::get('/news/{time}/{id}.html', 'IndexController@show');
-    Route::get('/video/{time}/{id}.html', 'IndexController@video');
+
 
 });
 
