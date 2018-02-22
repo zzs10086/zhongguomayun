@@ -22,7 +22,7 @@
 
 
     <!-- 分页 -->
-    <div style="background-color: #fff; padding: 20px 0px;">
+    <div style="background-color: #fff; padding: 20px 0px;clear:both;">
         <div class="page_area clearfix">
             {!! $paginate !!}
         </div>
