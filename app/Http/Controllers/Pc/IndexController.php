@@ -57,6 +57,7 @@ class IndexController extends Controller
             'videoNews' => $videoNews,
             'hotTag' => $hotTag,
             'mURL' => self::$mUrl,
+            'currentClass' =>'index',
         );
 
         return view('pc.index', $data);
@@ -108,6 +109,7 @@ class IndexController extends Controller
             'current' =>$category['category_name'],
             'hotTag' => $hotTag,
             'mURL' => self::$mUrl,
+            'currentClass' =>$cateName,
         );
 
         return view('pc.category', $data);
@@ -160,6 +162,7 @@ class IndexController extends Controller
             'current' =>$category['category_name'],
             'hotTag' => $hotTag,
             'mURL' => self::$mUrl,
+            'currentClass' =>'yulu',
         );
 
         return view('pc.yulu', $data);
@@ -211,6 +214,7 @@ class IndexController extends Controller
             'current' =>$category['category_name'],
             'hotTag' => $hotTag,
             'mURL' => self::$mUrl,
+            'currentClass' =>'video',
         );
 
         return view('pc.video-list', $data);
@@ -225,6 +229,7 @@ class IndexController extends Controller
     public function show($time, $id, $page = 1){
 
         $article = Article::getArcInfo($id);
+        //echo '<pre>';print_r($article);
 
         if(date('Ymd', strtotime($article['created_at'])) !== $time) abort(404);
 
@@ -272,7 +277,8 @@ class IndexController extends Controller
             'mURL' => self::$mUrl,
             'click' => $clickArr['click'],
             'hotTag' => $hotTag,
-            'id'=>$id
+            'id'=>$id,
+            'currentClass' =>$article['category']['category_name_en'],
 
         );
 
@@ -314,6 +320,7 @@ class IndexController extends Controller
             'id'=>$id,
              'hotTag' => $hotTag,
             'goodAndBad'=>$goodAndBad,
+             'currentClass' =>'video',
         );
 
         return view('pc.video',$data);
@@ -323,6 +330,22 @@ class IndexController extends Controller
         
         $page = Input::get('page', 1);
 
+        //tag
+        $hotTag =Tag::getTag();
+
+        if(!$keywords){
+            $data = array(
+                 'title' => '搜索马云最新资讯',
+                 'keyword' =>'搜索',
+                 'description' => "搜索马云最新资讯",
+                 'current' =>'搜索页面',
+                 'currentClass' =>'search',
+                 'hotTag' => $hotTag,
+                 'mURL' => self::$mUrl,
+            );
+            return view('pc.searchindex', $data);
+            exit;
+        }
         $limit = 10;
 
         $time =time();
@@ -343,9 +366,6 @@ class IndexController extends Controller
              'current_class' => 'thisclass'
         ]);
 
-        //tag
-        $hotTag =Tag::getTag();
-
         $data = array(
              'title' => '搜索结果',
              'keyword' =>'搜索',
@@ -353,6 +373,7 @@ class IndexController extends Controller
              'list'=>$list,
              'paginate' => $paginate,
              'current' =>'搜索结果：'.$keywords,
+             'currentClass' =>'search',
              'hotTag' => $hotTag,
              'mURL' => self::$mUrl,
         );

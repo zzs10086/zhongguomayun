@@ -60,6 +60,11 @@ a{color:#666; text-decoration:none;}
     transform: translate3d(0, 1px, -2px);}
 .nav ul li.hover a,.nav ul li.hover a:hover{width:87px; height:63px; color:#fff;}
 
+.nav ul li .current{background:#eee; height:63px; color: #333333;  background: #f7f7f7;
+    -webkit-box-shadow: 0 0 30px rgba(0,0,0,0.1);
+    box-shadow: 0 0 30px rgba(0,0,0,0.15);
+    -webkit-transform: translate3d(0, 1px, -2px);
+    transform: translate3d(0, 1px, -2px);}
 .index-box{width:1200px; height:340px; padding-top:20px; margin:0 auto; overflow:hidden;}
 .slide{width:825px; height:340px; float:left; overflow:hidden;}
 .FocusPic{zoom:1;position:relative; overflow:hidden}
@@ -621,4 +626,36 @@ a{color:#666; text-decoration:none;}
     width: 200px;
     margin: 10px auto;
     font-size: 20px;
+}
+.sear-place{
+    width: 600px;
+    margin: 100px auto;
+    padding: 0px;
+
+    height: 100px;
+}
+.sear-input{
+    width: 450px;
+    float: left;
+}
+.sear-keywords{
+    border: 1px solid #eeeeee;
+    width: 450px;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 20px;
+}
+.sear-btn{
+    width: 100px;
+    float: right;
+    border: 1px solid #eeeeee;
+    background-color: #000;
+    color: #ffffff;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    cursor: hand;
+}
+.sear-btn a{
+    color: #ffffff;
 }
