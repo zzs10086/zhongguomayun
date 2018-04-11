@@ -45,7 +45,7 @@
                 <li class="line"></li>
                 <li><a href="/aligushi/" @if($currentClass == 'aligushi')class="current"@endif>阿里故事</a></li>
                 <li class="line"></li>
-                <li><a href="/search/" @if($currentClass == 'search')class="current"@endif>全站搜索</a></li>
+                <li><a href="/search/" class="red">全站搜索</a></li>
                 <li class="line"></li>
             </ul>
         </div>

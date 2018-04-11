@@ -65,6 +65,11 @@ a{color:#666; text-decoration:none;}
     box-shadow: 0 0 30px rgba(0,0,0,0.15);
     -webkit-transform: translate3d(0, 1px, -2px);
     transform: translate3d(0, 1px, -2px);}
+.nav ul li .red{background:#eee; height:63px; color: #ff0000;  background: #f7f7f7;
+    -webkit-box-shadow: 0 0 30px rgba(0,0,0,0.1);
+    box-shadow: 0 0 30px rgba(0,0,0,0.15);
+    -webkit-transform: translate3d(0, 1px, -2px);
+    transform: translate3d(0, 1px, -2px);}
 .index-box{width:1200px; height:340px; padding-top:20px; margin:0 auto; overflow:hidden;}
 .slide{width:825px; height:340px; float:left; overflow:hidden;}
 .FocusPic{zoom:1;position:relative; overflow:hidden}

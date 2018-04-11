@@ -3,7 +3,7 @@
 @section('content')
     <form action="" method="get">
         <div class="sear-place">
-                <div class="sear-input"><input type="text" name="keywords" id="keywords" value="" placeholder="请输入关键词" class="sear-keywords"></div>
+                <div class="sear-input"><input type="text" name="keywords" id="keywords" value="" placeholder="请输入搜索关键词^_^" class="sear-keywords"></div>
                 <div class="sear-btn"><a href="javascript:void(0);" id="btnSearch">搜索</a></div>
         </div>
     </form>
