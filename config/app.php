@@ -246,8 +246,8 @@ return [
 
     'token_salt'=>env('TOKEN_SALT', 'mayunjiushge'),//盐值
 
-    'upload_file_url' =>evn('UPLOAD_FILE_URL',''),
-    'upload_image' =>evn('UPLOAD_IMAGE',''),
+    'upload_file_url' =>env('UPLOAD_FILE_URL',''),
+    'upload_image' =>env('UPLOAD_IMAGE',''),
 
 
 ];
