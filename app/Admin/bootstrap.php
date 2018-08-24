@@ -25,3 +25,6 @@ use Encore\Admin\Form;
 Encore\Admin\Form::forget(['map', 'editor']);
 
 Form::extend('ckeditor', CKEditor::class);
+
+// 重载view层，移到系统资源目录views
+app('view')->prependNamespace('admin', resource_path('views/admin'));
