@@ -17,13 +17,13 @@ class UploadController extends Controller
                }
                //$destinationPath = getenv('UPLOAD_FILE_PATH');  //图片存放路径
                //$destinationPath = 'upload/images/';  //图片存放路径
-               $destinationPath = getenv('UPLOAD_IMAGE');  //图片存放路径
+               $destinationPath = config('app.upload_image') .'/';  //图片存放路径
                $extension = $file->getClientOriginalExtension();  //获得文件后缀
                $fileName = md5(time()) . '.' . $extension;  //创建图片名字
                $result = $file->move($destinationPath, $fileName); //存储图片到路径
                $result = str_replace("\\","/",$result);
 
-               $url = getenv('UPLOAD_FILE_URL') . '/' . $result; //输出图片网站中浏览路径
+               $url = config('app.upload_file_url') . '/' . $result; //输出图片网站中浏览路径
 
                echo "<script>window.parent.CKEDITOR.tools.callFunction($ck, '$url', '');</script>";
 
