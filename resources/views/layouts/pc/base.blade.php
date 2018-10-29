@@ -62,7 +62,7 @@
 
         <div class="copyright">
             <p class="mobile-hide">本站由 阿里云提供技术支持 </p>
-            <p class="law">© 2017~2020 中国马云 | <a href="http://www.miitbeian.gov.cn/" rel="nofollow" target="_blank">苏ICP备16035736号-7</a> <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1272853601'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/stat.php%3Fid%3D1272853601%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script></p>
+            <p class="law">© 2017~2020 中国马云 | <a href="http://www.miitbeian.gov.cn/" rel="nofollow" target="_blank">苏ICP备16035736号-7</a> <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1272853601'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/stat.php%3Fid%3D1272853601%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script><script type="text/javascript" src="//js.users.51.la/19714627.js"></script></p>
 
         </div>
 
@@ -85,7 +85,7 @@
         s.parentNode.insertBefore(bp, s);
     })();
 </script>
-<script type="text/javascript" src="//js.users.51.la/19714627.js"></script>
+
 @yield('js')
 </body>
 </html>
