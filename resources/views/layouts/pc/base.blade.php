@@ -85,6 +85,7 @@
         s.parentNode.insertBefore(bp, s);
     })();
 </script>
+<script type="text/javascript" src="//js.users.51.la/19714627.js"></script>
 @yield('js')
 </body>
 </html>
