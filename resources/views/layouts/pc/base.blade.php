@@ -23,7 +23,7 @@
 <!--toper-->
 <div id="topBar" class="toper">
     <div class="tpr">
-        <p class="tpr_1">做此站仅向中国骄傲Jack Ma 马云致敬，全民偶像，我的人生导师！</p>
+        <p class="tpr_1">做此站仅向Jack Ma 马云致敬，全民偶像，我的人生导师！</p>
         <p class="tpr_2">it's never too late to believe in yourself!</p>
     </div>
 </div>
