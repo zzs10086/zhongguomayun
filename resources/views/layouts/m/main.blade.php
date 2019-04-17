@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="initial-scale=1, user-scalable=0, minimal-ui" charset="UTF-8">
-    <title>{{$title}}-中国马云</title>
+    <title>{{$title}}-马云导师</title>
     <meta name="keywords" content="{{$keyword}}" />
     <meta name="description" content="{{$description}}" />
     <meta name="full-screen" content="yes">

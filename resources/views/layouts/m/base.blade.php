@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{$title}}-中国马云</title>
+    <title>{{$title}}-马云导师</title>
     <meta name="keywords" content="{{$keyword}}" />
     <meta name="description" content="{{$description}}" />
     <link rel="stylesheet" type="text/css" href="<?php echo config('app.static_url');?>/m/css/global.css">
