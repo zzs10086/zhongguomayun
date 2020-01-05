@@ -20,7 +20,7 @@ Route::group(['domain' => config('app.domain'),'namespace' => 'Pc','prefix' => '
     Route::get('/yulu', 'IndexController@yulu');
     Route::get('/search/{keywords}', 'IndexController@search');
     Route::get('/search', 'IndexController@search');
-    Route::any('/wechat', 'IndexController@wechat');
+    Route::any('/check_token', 'IndexController@checkToken');
     Route::get('/video/{time}/{id}.html', 'IndexController@video');
     Route::get('/video/{page}.html', 'IndexController@videoList');
     Route::get('/video', 'IndexController@videoList');

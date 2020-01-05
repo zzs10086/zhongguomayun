@@ -382,7 +382,5 @@ class IndexController extends Controller
 
     }
 
-    public function wechat(Request $request){
-        echo "wechat";
-    }
+
 }
