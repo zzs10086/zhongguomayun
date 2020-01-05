@@ -28,7 +28,7 @@ class WechatController extends Controller
           }*/
 
           //获得参数 signature nonce token timestamp echostr
-          $echostr = $request->get('echostr');
+          /*$echostr = $request->get('echostr');
 
           $signature = $request->get('signature');
           $nonce = $request->get('nonce');
@@ -56,7 +56,10 @@ class WechatController extends Controller
                Log::info('Wechat where', ['data'=>'responseMsg']);
                $this->responseMsg();
 
-          }
+          }*/
+
+          //Log::info('Wechat where', ['data'=>'responseMsg']);
+          $this->responseMsg();
 
      }
 
@@ -96,11 +99,11 @@ class WechatController extends Controller
           //判断该数据包是否是订阅de事件推送
           if(strtolower($postObj->MsgType)=='event')
           {
-               Log::info('Wechat MsgType', ['data'=>'event']);
+               //Log::info('Wechat MsgType', ['data'=>'event']);
                //如果是关注 subscribe事件
                if(strtolower($postObj->Event)=='subscribe')
                {
-                    Log::info('Wechat Event', ['data'=>'subscribe']);
+                    //Log::info('Wechat Event', ['data'=>'subscribe']);
                     $toUser    =$postObj->FromUserName;
                     $fromUser  =$postObj->ToUserName;
                     $time      =time();
