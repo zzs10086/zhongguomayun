@@ -381,4 +381,8 @@ class IndexController extends Controller
         return view('pc.search', $data);
 
     }
+
+    public function wechat(Request $request){
+        echo "wechat";
+    }
 }

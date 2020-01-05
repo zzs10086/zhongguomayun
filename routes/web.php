@@ -27,6 +27,7 @@ Route::group(['domain' => config('app.domain'),'namespace' => 'Pc','prefix' => '
     Route::get('/{category}/{page}.html', 'IndexController@category');
     Route::get('/news/{time}/{id}_{page}.html', 'IndexController@show');
     Route::get('/news/{time}/{id}.html', 'IndexController@show');
+    Route::any('/wechat', 'IndexController@wechat');
 
 
 });
