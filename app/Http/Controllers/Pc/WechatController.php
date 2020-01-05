@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Pc;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Log;
 
 class WechatController extends Controller
 {
@@ -44,7 +45,7 @@ class WechatController extends Controller
           $str = sha1( implode( $array ) );
 
           if( $str  == $signature && $echostr ){
-
+               Log::info('Wechat where', ['data'=>'signature']);
                //第一次接入weixin api接口的时候
 
                echo  $echostr;
@@ -52,7 +53,7 @@ class WechatController extends Controller
                exit;
 
           }else{
-
+               Log::info('Wechat where', ['data'=>'responseMsg']);
                $this->responseMsg();
 
           }
@@ -95,9 +96,11 @@ class WechatController extends Controller
           //判断该数据包是否是订阅de事件推送
           if(strtolower($postObj->MsgType)=='event')
           {
+               Log::info('Wechat MsgType', ['data'=>'event']);
                //如果是关注 subscribe事件
                if(strtolower($postObj->Event)=='subscribe')
                {
+                    Log::info('Wechat Event', ['data'=>'subscribe']);
                     $toUser    =$postObj->FromUserName;
                     $fromUser  =$postObj->ToUserName;
                     $time      =time();
