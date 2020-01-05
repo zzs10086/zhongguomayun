@@ -32,9 +32,9 @@ class WechatController extends Controller
      private  function checkSignature($signature, $nonce, $timestamp)
      {
           //先获取到这三个参数
-          $signature = $_GET['signature'];
+          /*$signature = $_GET['signature'];
           $nonce = $_GET['nonce'];
-          $timestamp = $_GET['timestamp'];
+          $timestamp = $_GET['timestamp'];*/
 
           //把这三个参数存到一个数组里面
           $tmpArr = array($timestamp, $nonce, $this->token);
