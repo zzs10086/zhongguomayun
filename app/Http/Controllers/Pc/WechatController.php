@@ -9,7 +9,7 @@ class WechatController extends Controller
 {
     //
      private $token = 'zgmy';
-     public function checkToken(Request $request){
+     public function wechat(Request $request){
 
           $signature = $request->get('signature');
           $nonce = $request->get('nonce');
