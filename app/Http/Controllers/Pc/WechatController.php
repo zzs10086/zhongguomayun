@@ -108,7 +108,7 @@ class WechatController extends Controller
                     $fromUser  =$postObj->ToUserName;
                     $time      =time();
                     $msgType   ='text';
-                    $content   ='欢迎关注我的微信公众号！';
+                    $content   ='hello lao siji';
                     $template="<xml>
                     <ToUserName><![CDATA[%s]]></ToUserName>
                     <FromUserName><![CDATA[%s]]></FromUserName>
