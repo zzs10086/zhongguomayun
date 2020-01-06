@@ -14,6 +14,7 @@
         "johnlui/aliyun-oss": "^2.2",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
+        "overtrue/laravel-wechat": "~4.0",
         "predis/predis": "^1.1"
     },
     "require-dev": {
